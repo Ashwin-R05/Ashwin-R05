@@ -43,12 +43,6 @@
   <circle cx="780" cy="40" r="80" fill="none" stroke="#00d4ff11" stroke-width="1"/>
   <circle cx="80" cy="140" r="50" fill="none" stroke="#ff6b6b18" stroke-width="1"/>
 
-  <!-- Pulsing dot -->
-  <circle cx="44" cy="44" r="5" fill="#00ff88" filter="url(#glow)">
-    <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
-  </circle>
-  <text x="55" y="49" font-family="monospace" font-size="11" fill="#00ff8899">● OPEN TO INTERNSHIPS</text>
-
   <!-- Main name -->
   <text x="430" y="95" font-family="'Courier New', monospace" font-size="64" font-weight="900"
         text-anchor="middle" fill="url(#textGrad)" filter="url(#softglow)" letter-spacing="8">
@@ -279,7 +273,6 @@ A **smart city issue-reporting platform** built at TechHacks 2.0, SRM Chennai. C
 <!-- Profile views counter -->
 ![Profile Views](https://komarev.com/ghpvc/?username=Ashwin-R05&label=Profile+Views&color=00d4ff&style=for-the-badge)
 &nbsp;
-![Followers](https://img.shields.io/github/followers/Ashwin-R05?label=Followers&style=for-the-badge&color=7b2fff)
 
 <br/><br/>
 
@@ -304,10 +297,6 @@ A **smart city issue-reporting platform** built at TechHacks 2.0, SRM Chennai. C
   <text x="430" y="35" font-family="monospace" font-size="12" font-weight="600"
         text-anchor="middle" fill="#00d4ff" letter-spacing="3">
     ✦ IF YOU'VE READ THIS FAR, LET'S BUILD SOMETHING TOGETHER ✦
-  </text>
-  <text x="430" y="60" font-family="monospace" font-size="10"
-        text-anchor="middle" fill="#8892b0" letter-spacing="2">
-    ashwinindira05@gmail.com  ·  linkedin.com/in/ashwin-r05  ·  github.com/Ashwin-R05
   </text>
 </svg>
 
