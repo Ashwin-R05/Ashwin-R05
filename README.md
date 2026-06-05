@@ -203,29 +203,6 @@ A **smart city issue-reporting platform** built at TechHacks 2.0, SRM Chennai. C
 
 ---
 
-<!-- ═══════════════════ GITHUB STATS ═══════════════════ -->
-
-## `{ metrics }` — By the numbers
-
-<div align="center">
-
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=Ashwin-R05&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=00d4ff&icon_color=7b2fff&text_color=c9d1d9&ring_color=7b2fff&include_all_commits=true&count_private=true"/>
-&nbsp;&nbsp;
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ashwin-R05&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=00d4ff&text_color=c9d1d9&langs_count=8"/>
-
-<br/><br/>
-
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=Ashwin-R05&theme=tokyonight&hide_border=true&background=0d1117&stroke=7b2fff&ring=00d4ff&fire=ff6b6b&currStreakLabel=00d4ff&sideLabels=c9d1d9&dates=8892b0" alt="streak stats"/>
-
-<br/><br/>
-
-<!-- Activity Graph -->
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Ashwin-R05&bg_color=0d1117&color=00d4ff&line=7b2fff&point=ff6b6b&area=true&area_color=7b2fff&hide_border=true" alt="activity graph"/>
-
-</div>
-
----
-
 <!-- ═══════════════════ CURRENTLY / GOALS ═══════════════════ -->
 
 ## `{ currently }` — What's happening
