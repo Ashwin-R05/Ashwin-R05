@@ -18,7 +18,7 @@
 <!-- ══════════════ LIVE TYPING ══════════════ -->
 <br/>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=22&duration=2500&pause=800&color=00D4FF&background=00000000&center=true&vCenter=true&multiline=false&repeat=true&width=700&height=50&lines=%F0%9F%9A%80+Flutter+%26+Firebase+Developer+%7C+2nd+Year+KRCE;%F0%9F%8E%A8+Crafting+UI%2FUX+that+actually+feels+good;%E2%9A%A1+Building+real+production+apps+since+day+one;%F0%9F%92%BC+Open+to+Internships+%E2%80%94+Let%27s+build+together;%F0%9F%8C%90)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=22&duration=2500&pause=800&color=00D4FF&background=00000000&center=true&vCenter=true&multiline=false&repeat=true&width=700&height=50&lines=%F0%9F%9A%80+Flutter+%26+Firebase+Developer+%7C+3rd+Year+KRCE;%F0%9F%8E%A8+Crafting+UI%2FUX+that+actually+feels+good;%E2%9A%A1+Building+real+production+apps+since+day+one;%F0%9F%92%BC+Open+to+Internships+%E2%80%94+Let%27s+build+together)](https://git.io/typing-svg)
 
 <br/>
 
