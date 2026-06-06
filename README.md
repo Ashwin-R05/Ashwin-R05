@@ -1,284 +1,279 @@
-<!-- ╔══════════════════════════════════════════════════════════════╗ -->
-<!-- ║         ASHWIN R — GitHub Profile README                     ║ -->
-<!-- ║         Designed to stand out. Built to impress.            ║ -->
-<!-- ╚══════════════════════════════════════════════════════════════╝ -->
+<!-- ================================================================ -->
+<!--            ASHWIN R — GitHub Profile README v3.0                 -->
+<!--       Crafted from scratch. Built to be remembered.              -->
+<!-- ================================================================ -->
+
+<!--  ██╗  ██╗███████╗ █████╗ ██████╗ ███████╗██████╗  -->
+<!--  ██║  ██║██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗ -->
+<!--  ███████║█████╗  ███████║██║  ██║█████╗  ██████╔╝ -->
+<!--  ██╔══██║██╔══╝  ██╔══██║██║  ██║██╔══╝  ██╔══██╗ -->
+<!--  ██║  ██║███████╗██║  ██║██████╔╝███████╗██║  ██║ -->
+<!--  ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝ -->
 
 <div align="center">
 
-<!-- ═══════════════════ ANIMATED SVG HEADER ═══════════════════ -->
+<!-- ══════════════ HERO BANNER — CUSTOM SVG ══════════════ -->
+<img src="https://capsule-render.vercel.app/api?type=venom&height=280&color=gradient&customColorList=12,20,24&text=ASHWIN%20R&fontSize=90&fontColor=ffffff&fontAlignY=45&desc=Flutter%20%E2%80%A2%20Firebase%20%E2%80%A2%20Frontend%20%E2%80%A2%20UI%2FUX&descAlignY=68&descSize=20&descColor=a0c4ff&animation=fadeIn&stroke=7b2fff&strokeWidth=2" width="100%"/>
 
-<svg width="860" height="180" viewBox="0 0 860 180" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0a0e1a"/>
-      <stop offset="100%" style="stop-color:#0d1b2a"/>
-    </linearGradient>
-    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#00d4ff"/>
-      <stop offset="50%" style="stop-color:#7b2fff"/>
-      <stop offset="100%" style="stop-color:#ff6b6b"/>
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="softglow">
-      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
-      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-  </defs>
+<!-- ══════════════ LIVE TYPING ══════════════ -->
+<br/>
 
-  <!-- Background -->
-  <rect width="860" height="180" rx="16" fill="url(#bgGrad)"/>
-
-  <!-- Subtle grid lines -->
-  <line x1="0" y1="60" x2="860" y2="60" stroke="#ffffff08" stroke-width="1"/>
-  <line x1="0" y1="120" x2="860" y2="120" stroke="#ffffff08" stroke-width="1"/>
-  <line x1="215" y1="0" x2="215" y2="180" stroke="#ffffff08" stroke-width="1"/>
-  <line x1="430" y1="0" x2="430" y2="180" stroke="#ffffff08" stroke-width="1"/>
-  <line x1="645" y1="0" x2="645" y2="180" stroke="#ffffff08" stroke-width="1"/>
-
-  <!-- Decorative circles -->
-  <circle cx="780" cy="40" r="60" fill="none" stroke="#7b2fff22" stroke-width="1"/>
-  <circle cx="780" cy="40" r="80" fill="none" stroke="#00d4ff11" stroke-width="1"/>
-  <circle cx="80" cy="140" r="50" fill="none" stroke="#ff6b6b18" stroke-width="1"/>
-
-  <!-- Main name -->
-  <text x="430" y="95" font-family="'Courier New', monospace" font-size="64" font-weight="900"
-        text-anchor="middle" fill="url(#textGrad)" filter="url(#softglow)" letter-spacing="8">
-    ASHWIN R
-  </text>
-
-  <!-- Subtitle -->
-  <text x="430" y="130" font-family="monospace" font-size="14" font-weight="400"
-        text-anchor="middle" fill="#8892b0" letter-spacing="4">
-    FLUTTER · FRONTEND · FIREBASE · FIGMA
-  </text>
-
-  <!-- Bottom accent line -->
-  <line x1="160" y1="152" x2="700" y2="152" stroke="url(#textGrad)" stroke-width="1" opacity="0.6"/>
-
-  <!-- Location tag -->
-  <text x="430" y="170" font-family="monospace" font-size="10"
-        text-anchor="middle" fill="#64748b" letter-spacing="2">
-    📍 TRICHY, TAMIL NADU · B.TECH IT · KRCE 2024–28
-  </text>
-</svg>
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=22&duration=2500&pause=800&color=00D4FF&background=00000000&center=true&vCenter=true&multiline=false&repeat=true&width=700&height=50&lines=%F0%9F%9A%80+Flutter+%26+Firebase+Developer+%7C+2nd+Year+KRCE;%F0%9F%8E%A8+Crafting+UI%2FUX+that+actually+feels+good;%E2%9A%A1+Building+real+production+apps+since+day+one;%F0%9F%92%BC+Open+to+Internships+%E2%80%94+Let%27s+build+together;%F0%9F%8C%90)](https://git.io/typing-svg)
 
 <br/>
 
-<!-- ═══════════════════ ANIMATED TYPING ═══════════════════ -->
-
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&duration=2800&pause=900&color=00D4FF&center=true&vCenter=true&multiline=false&width=600&lines=Flutter+%26+Firebase+Developer+%F0%9F%9A%80;Building+Real+Production+Web+Apps+%F0%9F%8C%90;UI%2FUX+Designer+%7C+Figma+Craftsman+%F0%9F%8E%A8;Full+Stack+in+Progress+%7C+MERN+%2B+Dart+%E2%9A%A1;Open+to+Internship+Opportunities+%F0%9F%92%BC)](https://git.io/typing-svg)
+<!-- ══════════════ QUICK STAT PILLS ══════════════ -->
+![Status](https://img.shields.io/badge/🟢_Status-Open_to_Internship-00d26a?style=flat-square&labelColor=0d1117)
+![Year](https://img.shields.io/badge/📅_Year-2nd_Year_B.Tech_IT-7b2fff?style=flat-square&labelColor=0d1117)
+![Location](https://img.shields.io/badge/📍_Base-Trichy,_Tamil_Nadu-ff6b6b?style=flat-square&labelColor=0d1117)
+![Focus](https://img.shields.io/badge/🎯_Focus-Flutter_%7C_Firebase_%7C_Figma-00d4ff?style=flat-square&labelColor=0d1117)
 
 </div>
 
 ---
 
-<!-- ═══════════════════ ABOUT ME — TERMINAL STYLE ═══════════════════ -->
+<!-- ══════════════ WHO AM I — STORYTELLING SECTION ══════════════ -->
 
-<img align="right" width="340" src="https://raw.githubusercontent.com/Potential17/Potential17/master/user%20(2).gif" alt="developer gif"/>
+<img align="right" width="320" src="https://user-images.githubusercontent.com/74038190/229223263-cf2e4b07-2615-4f87-9c38-e37600f8381a.gif"/>
 
-```dart
-// ashwin.dart
+## `> whoami`
 
-class Ashwin extends Developer {
+```yaml
+Name     : Ashwin R
+Handle   : @Ashwin-R05
+College  : K. Ramakrishnan College of Engineering
+Branch   : B.Tech Information Technology (2024–2028)
+City     : Trichy, Tamil Nadu, India 🇮🇳
 
-  final String name     = "Ashwin R";
-  final String college  = "KRCE, Trichy — B.Tech IT";
-  final String batch    = "2024 → 2028";
-  final String location = "Trichy, Tamil Nadu 🇮🇳";
+I build things with Flutter, Firebase, and Figma.
+Not just apps — experiences people actually use.
 
-  final List<String> crafts = [
-    "Flutter Web Apps",
-    "Firebase Backends",
-    "UI/UX with Figma",
-    "Full Stack (MERN)",
-  ];
+Currently:
+  ↳ Crafting Flutter web apps with Firebase backends
+  ↳ Designing UI/UX in Figma before I write a single line
+  ↳ Learning Java + DSA to strengthen my CS foundation
+  ↳ Open to Frontend / Flutter developer internship
 
-  final Map<String, bool> status = {
-    "Open to Internship" : true,
-    "Building in Public" : true,
-    "Learning DSA"       : true,
-    "Available for Collab": true,
-  };
-
-  @override
-  String get motto =>
-    "I don't just write code — I craft experiences.";
-}
+Fun facts:
+  ↳ I ran a bridal embroidery design studio (Auri Designer)
+     as a side project — yes, it's live and real
+  ↳ I containerize my backends with Docker (Task_Flow ✓)
+  ↳ I set up CI/CD pipelines even for personal projects
 ```
 
 <br clear="right"/>
 
 ---
 
-<!-- ═══════════════════ TECH STACK — CUSTOM VISUAL ═══════════════════ -->
+<!-- ══════════════ TECH STACK — SKILL ICONS ══════════════ -->
 
-## `{ stack }` — What I work with
+## `> tech --list-all`
 
 <div align="center">
 
-### ⚡ Core Arsenal
+### Mobile & Web
+[![My Skills](https://skillicons.dev/icons?i=flutter,dart,react,js,ts,html,css&theme=dark&perline=7)](https://skillicons.dev)
 
-| 📱 Mobile & Web | 🔥 Backend & DB | 🎨 Design | 🛠 Tools |
-|:---:|:---:|:---:|:---:|
-| ![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white) | ![Firebase](https://img.shields.io/badge/Firebase-FF6F00?style=for-the-badge&logo=firebase&logoColor=white) | ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white) | ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white) |
-| ![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white) | ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white) | ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) | ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white) |
-| ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) | ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white) | ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) | ![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white) |
-| ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) | ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white) | ![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white) | ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white) |
+### Backend & Database
+[![My Skills](https://skillicons.dev/icons?i=nodejs,express,python,mongodb,mysql,firebase&theme=dark&perline=6)](https://skillicons.dev)
+
+### Dev Tools & Design
+[![My Skills](https://skillicons.dev/icons?i=git,github,docker,figma,vscode,postman&theme=dark&perline=6)](https://skillicons.dev)
+
+<br/>
+
+<!-- Proficiency bars as badges -->
+| Skill | Confidence |
+|:------|:-----------|
+| Flutter / Dart | Production-deployed |
+| Firebase (Auth, Firestore, Storage) | Multi-project experience |
+| UI/UX — Figma | Design-first workflow |
+| JavaScript / Node.js | Full-stack projects |
+| Python | Academic + scripting |
+| SQL / MongoDB | Backend data layer |
 
 </div>
 
 ---
 
-<!-- ═══════════════════ FEATURED PROJECTS ═══════════════════ -->
+<!-- ══════════════ PROJECTS — VISUAL SHOWCASE ══════════════ -->
 
-## `{ projects }` — Things I've Built
+## `> ls -la ./projects/`
 
-<div align="center">
-
-<!-- PROJECT CARDS via SVG-style table layout -->
-
+<!-- PROJECT 1 + 2 -->
 <table>
 <tr>
 <td width="50%" valign="top">
+<h3> Auri Designer</h3>
+<img src="https://img.shields.io/badge/Flutter_Web-Live_&_Production-02569B?style=flat-square&logo=flutter"/>
+<img src="https://img.shields.io/badge/Firebase-Backend-FFCA28?style=flat-square&logo=firebase&logoColor=black"/>
 
-### 🌐 Auri Designer — *Production App*
-> Flutter Web · Firebase · Admin Portal
+> A full-featured bridal **aari embroidery** web storefront — real business, real users. Custom dark/gold UI, Firebase Auth + Firestore, admin dashboard, multi-platform support.
 
-A **premium web platform** for a bridal embroidery business — complete with customer-facing storefront, real-time admin dashboard, Firebase Auth + Firestore backend, and a fully custom dark/gold UI. Actually live. Actually used.
+**What I built:** Client portal · Admin panel · Auth system · Cloud storage · Mobile-responsive web
 
-**Stack:** `Flutter` `Dart` `Firebase` `Figma` `Web`
-
-[![Live](https://img.shields.io/badge/🔗_Live_App-Production-00d4ff?style=flat-square)](https://github.com/Ashwin-R05)
-![Status](https://img.shields.io/badge/Status-Live-00ff88?style=flat-square)
-
+```
+Stack : Flutter · Dart · Firebase · Figma
+Type  : Real commercial project (live)
+```
 </td>
 <td width="50%" valign="top">
+<h3> Task Flow</h3>
+<a href="https://github.com/Ashwin-R05/Task_Flow"><img src="https://img.shields.io/badge/GitHub-View_Repo-181717?style=flat-square&logo=github"/></a>
+<img src="https://img.shields.io/badge/Dockerized-yes-2496ED?style=flat-square&logo=docker"/>
+<img src="https://img.shields.io/badge/CI%2FCD-GitHub_Actions-2088FF?style=flat-square&logo=githubactions"/>
 
-### ⚙️ Task Flow — *Full Stack System*
-> Node.js · Express · MongoDB · JWT
+> Multi-tenant task management — **multiple organizations, 100% isolated data**. JWT auth, RBAC, Glassmorphism UI, Docker container, GitHub Actions workflow.
 
-A **multi-tenant task management system** where entire organizations can operate in isolated data silos. Built JWT auth from scratch, RBAC, Dockerized — and even set up a CI/CD GitHub Actions workflow.
+**What I built:** Auth from scratch · Role-based access · Multi-tenancy · DevOps pipeline
 
-**Stack:** `Node.js` `MongoDB` `JWT` `Docker` `HTML/CSS/JS`
-
-[![View Code](https://img.shields.io/badge/View_Code-GitHub-181717?style=flat-square&logo=github)](https://github.com/Ashwin-R05/Task_Flow)
-![Stars](https://img.shields.io/github/stars/Ashwin-R05/Task_Flow?style=flat-square&color=ffd700)
-
+```
+Stack : Node.js · Express · MongoDB · JWT · Docker
+Stars :  1 | Type : Full-Stack System
+```
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
+<h3> Summarizit</h3>
+<a href="https://github.com/Ashwin-R05/summarizit"><img src="https://img.shields.io/badge/GitHub-View_Repo-181717?style=flat-square&logo=github"/></a>
+<img src="https://img.shields.io/badge/Cross--Platform-6_targets-00d4ff?style=flat-square&logo=flutter"/>
 
-### 📝 Summarizit — *Flutter App*
-> Flutter · Dart · API Integration
+> AI-powered summarization app in **Flutter** — targets Android, iOS, Web, Desktop (Windows, Linux, macOS). Clean architecture, API-driven.
 
-A **cross-platform summarization app** built in Flutter targeting Android, iOS, Web, and Desktop. Clean architecture, API-driven — built as a productivity tool to cut reading time.
+**What I built:** Multi-platform Flutter app · REST integration · Clean architecture
 
-**Stack:** `Flutter` `Dart` `REST API` `Cross-Platform`
-
-[![View Code](https://img.shields.io/badge/View_Code-GitHub-181717?style=flat-square&logo=github)](https://github.com/Ashwin-R05/summarizit)
-![Stars](https://img.shields.io/github/stars/Ashwin-R05/summarizit?style=flat-square&color=ffd700)
-
+```
+Stack : Flutter · Dart · REST API
+Stars :  2 | Platforms : 6
+```
 </td>
 <td width="50%" valign="top">
+<h3> UrbanLens / CityGuard</h3>
+<img src="https://img.shields.io/badge/TechHacks_2.0-SRM_Chennai-7b2fff?style=flat-square"/>
+<img src="https://img.shields.io/badge/SDG_11-Sustainable_Cities-00c853?style=flat-square"/>
 
-### 🏙️ UrbanLens / CityGuard — *Hackathon*
-> MERN Stack · Smart City · TechHacks 2.0
+> Smart city **civic issue reporting** platform — built at TechHacks 2.0 hackathon, SRM Chennai. Citizens report problems, admins resolve them, all real-time.
 
-A **smart city issue-reporting platform** built at TechHacks 2.0, SRM Chennai. Citizens report civic problems, track resolution status, and city admins manage responses — all in real-time.
+**My role:** Data & Research — user research, dataset analysis, feature scoping
 
-**Stack:** `MongoDB` `Express` `React` `Node.js`
+```
+Stack : MERN Stack (MongoDB · Express · React · Node)
+Event : Hackathon @ SRM Chennai
+```
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top">
+<h3> NITT AuthForge</h3>
+<img src="https://img.shields.io/badge/React-Frontend-61DAFB?style=flat-square&logo=react&logoColor=black"/>
+<img src="https://img.shields.io/badge/OAuth_2.0-Implemented-ff6b6b?style=flat-square"/>
+<img src="https://img.shields.io/badge/WebSocket-Security_Logging-ffd700?style=flat-square"/>
 
-![Event](https://img.shields.io/badge/TechHacks_2.0-SRM_Chennai-7b2fff?style=flat-square)
-![Role](https://img.shields.io/badge/Role-Data_%26_Research-ff6b6b?style=flat-square)
+> A production-grade **authentication system** with dual-token JWT strategy (access + refresh), OAuth 2.0 flow, and WebSocket-based real-time security logging. Fully documented.
 
+```
+Stack : React · Node.js · JWT (dual-token) · OAuth 2.0 · WebSocket
+Type  : Security-focused auth architecture
+```
 </td>
 </tr>
 </table>
 
-</div>
-
 ---
 
-<!-- ═══════════════════ CURRENTLY / GOALS ═══════════════════ -->
+<!-- ══════════════ GITHUB STATS SUITE ══════════════ -->
 
-## `{ currently }` — What's happening
+## `> git log --stat`
 
 <div align="center">
 
-```
-╔══════════════════════════════════════════════════════════╗
-║                   ASHWIN'S STATUS BOARD                  ║
-╠══════════════════════╦═══════════════════════════════════╣
-║  🎓 LEARNING         ║  Java + DSA  |  MERN  |  Cloud   ║
-╠══════════════════════╬═══════════════════════════════════╣
-║  🔨 BUILDING         ║  Flutter Web Apps + Firebase      ║
-╠══════════════════════╬═══════════════════════════════════╣
-║  🎯 SEEKING          ║  Frontend / Flutter Internship    ║
-╠══════════════════════╬═══════════════════════════════════╣
-║  📍 BASED IN         ║  Trichy, Tamil Nadu, India        ║
-╠══════════════════════╬═══════════════════════════════════╣
-║  ⚡ FUN FACT         ║  I run a design label: Auri 🎨    ║
-╚══════════════════════╩═══════════════════════════════════╝
-```
+<!-- Row 1: Streak -->
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=Ashwin-R05&theme=tokyonight&hide_border=true&background=0d1117&stroke=7b2fff&ring=00d4ff&fire=ff6b6b&currStreakLabel=00d4ff&sideLabels=c9d1d9&currStreakNum=ffffff&sideNums=c9d1d9&dates=8892b0" width="600px"/>
 
 </div>
 
----
+<!-- ══════════════ CONNECT ══════════════ -->
 
-<!-- ═══════════════════ CONNECT ═══════════════════ -->
-
-## `{ connect }` — Let's talk
+## `> ./connect --all`
 
 <div align="center">
 
 <br/>
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ashwin_R-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ashwin-r05)
+<a href="https://www.linkedin.com/in/ashwin-r05">
+  <img src="https://img.shields.io/badge/LinkedIn-%40ashwin--r05-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+</a>
 &nbsp;
-[![GitHub](https://img.shields.io/badge/GitHub-Ashwin--R05-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Ashwin-R05)
+<a href="https://github.com/Ashwin-R05">
+  <img src="https://img.shields.io/badge/GitHub-%40Ashwin--R05-181717?style=for-the-badge&logo=github&logoColor=white"/>
+</a>
 &nbsp;
-[![Email](https://img.shields.io/badge/Email-ashwinindira05@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ashwinindira05@gmail.com)
+<a href="mailto:ashwinindira05@gmail.com">
+  <img src="https://img.shields.io/badge/Email-ashwinindira05@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
+</a>
 &nbsp;
-[![Instagram](https://img.shields.io/badge/Instagram-ashwin.r05-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/ashwin.r05)
+<a href="https://www.instagram.com/ashwin.r05">
+  <img src="https://img.shields.io/badge/Instagram-%40ashwin.r05-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
+</a>
 
 <br/><br/>
 
-<!-- Profile views counter -->
 ![Profile Views](https://komarev.com/ghpvc/?username=Ashwin-R05&label=Profile+Views&color=00d4ff&style=for-the-badge)
-&nbsp;
 
-<br/><br/>
-
-<!-- ═══════════════════ FOOTER SVG ═══════════════════ -->
-
-<svg width="860" height="80" viewBox="0 0 860 80" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#0a0e1a"/>
-      <stop offset="50%" style="stop-color:#0d1b2a"/>
-      <stop offset="100%" style="stop-color:#0a0e1a"/>
-    </linearGradient>
-    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:transparent"/>
-      <stop offset="30%" style="stop-color:#00d4ff"/>
-      <stop offset="70%" style="stop-color:#7b2fff"/>
-      <stop offset="100%" style="stop-color:transparent"/>
-    </linearGradient>
-  </defs>
-  <rect width="860" height="80" rx="12" fill="url(#footerGrad)"/>
-  <line x1="0" y1="1" x2="860" y2="1" stroke="url(#lineGrad)" stroke-width="2"/>
-  <text x="430" y="35" font-family="monospace" font-size="12" font-weight="600"
-        text-anchor="middle" fill="#00d4ff" letter-spacing="3">
-    ✦ IF YOU'VE READ THIS FAR, LET'S BUILD SOMETHING TOGETHER ✦
-  </text>
-</svg>
+<br/>
 
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════ -->
-<!-- Built with intention. Not just a README — a statement.     -->
-<!-- ═══════════════════════════════════════════════════════════ -->
+---
+
+<!-- ══════════════ FOOTER WAVE ══════════════ -->
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&height=120&color=gradient&customColorList=12,20,24&section=footer&text=Let%27s+build+something+together.&fontSize=20&fontColor=a0c4ff&fontAlignY=65&animation=fadeIn" width="100%"/>
+
+</div>
+
+---
+
+<!-- ══════════════ HIDDEN: SNAKE GITHUB ACTION SETUP ══════════════
+
+To activate the snake animation on your profile:
+
+1. In your Ashwin-R05 repo, create this file:
+   .github/workflows/snake.yml
+
+2. Paste this content:
+
+name: Generate Snake
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Platane/snk@v3
+        with:
+          github_user_name: Ashwin-R05
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
+      - uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+3. Go to Settings → Actions → General → set "Workflow permissions" to Read and Write
+4. Run the Action manually once from the Actions tab
+
+The snake will auto-update every 12 hours! ✅
+
+══════════════════════════════════════════════════════════════ -->
