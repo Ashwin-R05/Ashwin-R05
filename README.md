@@ -24,7 +24,7 @@
 
 <!-- ══════════════ QUICK STAT PILLS ══════════════ -->
 ![Status](https://img.shields.io/badge/🟢_Status-Open_to_Internship-00d26a?style=flat-square&labelColor=0d1117)
-![Year](https://img.shields.io/badge/📅_Year-2nd_Year_B.Tech_IT-7b2fff?style=flat-square&labelColor=0d1117)
+![Year](https://img.shields.io/badge/📅_Year-3rd_Year_B.Tech_IT-7b2fff?style=flat-square&labelColor=0d1117)
 ![Location](https://img.shields.io/badge/📍_Base-Trichy,_Tamil_Nadu-ff6b6b?style=flat-square&labelColor=0d1117)
 ![Focus](https://img.shields.io/badge/🎯_Focus-Flutter_%7C_Firebase_%7C_Figma-00d4ff?style=flat-square&labelColor=0d1117)
 
