@@ -6,10 +6,7 @@ Identity: Cybersecurity Enthusiast & Full-Stack Developer Profile.
 Features:
 - Cyber Command Center HUD aesthetic with navy/cyan/emerald/violet matrix glow.
 - Left Panel: Cyber Security System Matrix & Tech Nodes (Flutter AppSec, React WebSec, MongoDB DB Vault, Node.js JWT/RBAC, Python Sec Scripts, Java Crypt DSA).
-- Features rotating Cyber HUD rings, scanning laser reticle, encryption status (AES-256, Firewall Active, OWASP Audited),
-  and vector logos for Flutter, React (with rotating atomic orbits), MongoDB leaf, Node.js, Python, Java.
-- Right Panel: Typewriter terminal info block (whoami, role, location, fields, core_stack, status, contact),
-  highlighted tech & security badges, and dynamic security metrics footer bar.
+- XML Valid: All text nodes escaped with html.escape for 100% SVG/XML compliance.
 """
 import os, sys, html
 
@@ -133,7 +130,7 @@ def generate_cyber_panel(theme_cfg):
         ("Flutter", "App Security", "#02569B", "flutter", 20, 248, "0.2s"),
         ("React", "Web Security", "#61DAFB", "react", 205, 248, "0.35s"),
         ("MongoDB", "NoSQL Vault", "#13AA52", "mongodb", 20, 324, "0.50s"),
-        ("Node.js", "JWT &amp; Auth", "#68A063", "nodejs", 205, 324, "0.65s"),
+        ("Node.js", "JWT & Auth", "#68A063", "nodejs", 205, 324, "0.65s"),
         ("Python", "Sec Scripts", "#3776AB", "python", 20, 400, "0.80s"),
         ("Java & DSA", "Algorithms", "#F89820", "java", 205, 400, "0.95s"),
     ]
@@ -188,9 +185,9 @@ def generate_cyber_panel(theme_cfg):
 
         a(f'  </g>')
 
-        # Node Labels & Status Indicator
-        a(f'  <text x="48" y="27" font-size="12" font-weight="800" fill="{theme_cfg["TEXT"]}">{name}</text>')
-        a(f'  <text x="48" y="44" font-size="9.5" font-weight="600" fill="{col}">{cat}</text>')
+        # Node Labels & Status Indicator (Fully Escaped)
+        a(f'  <text x="48" y="27" font-size="12" font-weight="800" fill="{theme_cfg["TEXT"]}">{esc(name)}</text>')
+        a(f'  <text x="48" y="44" font-size="9.5" font-weight="600" fill="{col}">{esc(cat)}</text>')
         
         # Cyber Active Pulse Dot
         a(f'  <circle cx="160" cy="16" r="3" fill="{theme_cfg["CYAN"]}">'
@@ -236,7 +233,7 @@ def generate_svg(theme_name):
     a(f'<circle cx="30" cy="25" r="5.5" fill="#ff5f56"/>')
     a(f'<circle cx="50" cy="25" r="5.5" fill="#ffbd2e"/>')
     a(f'<circle cx="70" cy="25" r="5.5" fill="#27c93f"/>')
-    a(f'<text x="{W/2}" y="29" text-anchor="middle" font-size="12" fill="{t["MUTED"]}">ashwinindira05@gmail.com — % ./cyber-profile.sh --live</text>')
+    a(f'<text x="{W/2}" y="29" text-anchor="middle" font-size="12" fill="{t["MUTED"]}">ashwinindira05@gmail.com - % ./cyber-profile.sh --live</text>')
 
     # ==================== LEFT PANEL (Cyber Security & Tech Vault) ====================
     a(f'<g transform="translate(36, 84)">')
@@ -277,7 +274,7 @@ def generate_svg(theme_name):
     for i, (label, val, col, b_anim) in enumerate(info_items):
         cur_y = start_y + i * 32
         a(f'  <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="{b_anim}" fill="freeze"/>')
-        a(f'    <text x="24" y="{cur_y}" font-size="11.5" font-weight="700" fill="{t["MUTED"]}">{label:<11}: </text>')
+        a(f'    <text x="24" y="{cur_y}" font-size="11.5" font-weight="700" fill="{t["MUTED"]}">{esc(label):<11}: </text>')
         a(f'    <text x="135" y="{cur_y}" font-size="11.5" font-weight="600" fill="{col}">{esc(val)}</text>')
         a(f'  </g>')
 
