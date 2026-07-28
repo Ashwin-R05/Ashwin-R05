@@ -3,14 +3,14 @@
 Generate theme-aware animated profile hero banners (dark.svg & light.svg) for Ashwin R.
 
 Features:
-- Navy / Cyan / Violet / Emerald dark & light theme palettes matching the profile aesthetics.
-- Outer terminal window frame with red/yellow/green control buttons & status title.
-- Left Panel: Animated Skill Radar Chart (Pentagon/Hexagon radar grid with skill polygon,
-  rotating radar sweep ray, pulsing vertex dots, and percentage badges).
-- Right Panel: Typewriter-style terminal info block (whoami, role, location, degree, stack, status, contact),
-  tech badge pills row, and dynamic metrics footer bar.
+- Cybersecurity / Sci-Fi HUD aesthetic with navy/cyan/emerald/violet matrix glow.
+- Left Panel: Cyber Security System Matrix + Interactive Tech Nodes (Flutter, React, MongoDB, Node.js, Python, Java).
+- Features rotating Cyber HUD rings, scanning laser reticle, encryption status (AES-256, Firewall Active),
+  and authentic vector logos for Flutter, React (with rotating atomic orbits), MongoDB leaf, Node.js, Python, Java.
+- Right Panel: Typewriter terminal info block (whoami, role, location, degree, stack, status, contact),
+  highlighted tech pill badges, and metrics footer bar.
 """
-import os, sys, math, html
+import os, sys, html
 
 THEMES = {
     "dark": {
@@ -27,13 +27,13 @@ THEMES = {
         "MUTED": "#94A3B8",
         "DIM": "#475569",
         "STROKE": "rgba(34,211,238,0.30)",
-        "STROKE_HI": "rgba(34,211,238,0.60)",
+        "STROKE_HI": "rgba(34,211,238,0.65)",
         "BARLINE": "rgba(255,255,255,0.08)",
         "PILL_BG": "rgba(124,58,237,0.25)",
         "PILL_STROKE": "rgba(167,139,250,0.45)",
-        "RADAR_GRID": "rgba(34,211,238,0.18)",
-        "RADAR_FILL": "url(#radarGradDark)",
-        "SWEEP_COLOR": "rgba(34,211,238,0.25)",
+        "NODE_BG": "#0E172A",
+        "NODE_STROKE": "rgba(34,211,238,0.25)",
+        "SHIELD_FILL": "rgba(16,185,129,0.12)",
     },
     "light": {
         "BG": "#F1F5F9",
@@ -53,9 +53,9 @@ THEMES = {
         "BARLINE": "rgba(0,0,0,0.08)",
         "PILL_BG": "rgba(124,58,237,0.12)",
         "PILL_STROKE": "rgba(124,58,237,0.35)",
-        "RADAR_GRID": "rgba(8,145,178,0.20)",
-        "RADAR_FILL": "url(#radarGradLight)",
-        "SWEEP_COLOR": "rgba(8,145,178,0.20)",
+        "NODE_BG": "#F1F5F9",
+        "NODE_STROKE": "rgba(8,145,178,0.30)",
+        "SHIELD_FILL": "rgba(5,150,105,0.12)",
     }
 }
 
@@ -66,106 +66,145 @@ FONT = "ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace"
 def esc(s):
     return html.escape(str(s), quote=True)
 
-def generate_radar(cx, cy, r, theme_cfg):
+def generate_cyber_panel(theme_cfg):
     """
-    Generate the animated skill radar chart SVG elements.
-    Axes: 6 skills (Hexagon).
+    Generate the Left Panel: Cyber Security Vault + Tech Stack Nodes (Flutter, React, MongoDB, Node.js, Python, Java).
     """
-    skills = [
-        ("Flutter & Dart", 0.95),
-        ("Frontend Web", 0.90),
-        ("Node & Express", 0.82),
-        ("Java & DSA", 0.85),
-        ("Python & Scripts", 0.80),
-        ("Database & SQL", 0.78),
-    ]
-    n = len(skills)
-    angles = [-math.pi/2 + i * (2 * math.pi / n) for i in range(n)]
-    
     out = []
     a = out.append
 
-    # Outer section header inside panel
-    a(f'<text x="{cx}" y="{cy - r - 35}" text-anchor="middle" font-size="11" letter-spacing="2.5" font-weight="700" fill="{theme_cfg["CYAN"]}">VISUAL.MAP // SKILL.RADAR</text>')
+    # Panel Header Inside Left Box
+    a(f'<text x="200" y="32" text-anchor="middle" font-size="11" letter-spacing="2.5" font-weight="700" fill="{theme_cfg["CYAN"]}">CYBER.VAULT // TECH MATRIX</text>')
 
-    # Concentric Grid Rings (20%, 40%, 60%, 80%, 100%)
-    for frac in [0.2, 0.4, 0.6, 0.8, 1.0]:
-        pts = []
-        for ang in angles:
-            px = cx + r * frac * math.cos(ang)
-            py = cy + r * frac * math.sin(ang)
-            pts.append(f"{px:.1f},{py:.1f}")
-        pts_str = " ".join(pts)
-        stroke_w = "1.5" if frac == 1.0 else "1"
-        dash = "" if frac == 1.0 else 'stroke-dasharray="3,3"'
-        a(f'<polygon points="{pts_str}" fill="none" stroke="{theme_cfg["RADAR_GRID"]}" stroke-width="{stroke_w}" {dash}/>')
+    # Cyber HUD Top Security Status Bar
+    a(f'<g transform="translate(20, 44)">')
+    a(f'  <rect width="360" height="26" rx="6" fill="{theme_cfg["NODE_BG"]}" stroke="{theme_cfg["NODE_STROKE"]}"/>')
+    a(f'  <circle cx="15" cy="13" r="4" fill="{theme_cfg["EMERALD"]}">'
+      f'    <animate attributeName="opacity" values="1;0.3;1" dur="1.6s" repeatCount="indefinite"/>'
+      f'  </circle>')
+    a(f'  <text x="26" y="17" font-size="9.5" font-weight="700" fill="{theme_cfg["EMERALD"]}">SECURE NODE <tspan fill="{theme_cfg["MUTED"]}">| AES-256 | FIREWALL: ACTIVE</tspan></text>')
+    a(f'</g>')
 
-    # Radial Axis Lines
-    for ang in angles:
-        ax = cx + r * math.cos(ang)
-        ay = cy + r * math.sin(ang)
-        a(f'<line x1="{cx}" y1="{cy}" x2="{ax:.1f}" y2="{ay:.1f}" stroke="{theme_cfg["RADAR_GRID"]}" stroke-width="1.2"/>')
+    # Central Cyber Security HUD Core (Center: cx=200, cy=155)
+    cx, cy = 200, 155
 
-    # Radar Rotating Scanner Ray
+    # Concentric Cyber Target & Radar Rings
     a(f'<g transform="translate({cx},{cy})">')
-    a(f'  <g>')
-    a(f'    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite"/>')
-    a(f'    <line x1="0" y1="0" x2="0" y2="{-r}" stroke="{theme_cfg["CYAN"]}" stroke-width="2" opacity="0.8"/>')
-    a(f'    <path d="M 0 0 L 0 {-r} A {r} {r} 0 0 1 {r*0.5:.1f} {-r*0.866:.1f} Z" fill="{theme_cfg["SWEEP_COLOR"]}"/>')
-    a(f'  </g>')
+    
+    # Outer Rotating HUD Segmented Ring
+    a(f'  <circle cx="0" cy="0" r="62" fill="none" stroke="{theme_cfg["CYAN"]}" stroke-width="1.2" stroke-dasharray="8,5,15,5" opacity="0.65">')
+    a(f'    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="12s" repeatCount="indefinite"/>')
+    a(f'  </circle>')
+
+    # Counter-Rotating Inner Tech Ring
+    a(f'  <circle cx="0" cy="0" r="48" fill="none" stroke="{theme_cfg["VIOLET"]}" stroke-width="1" stroke-dasharray="4,4" opacity="0.6">')
+    a(f'    <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="8s" repeatCount="indefinite"/>')
+    a(f'  </circle>')
+
+    # Pulsing Center Cyber Shield
+    a(f'  <path d="M 0,-28 L 22,-14 L 22,12 L 0,28 L -22,12 L -22,-14 Z" fill="{theme_cfg["SHIELD_FILL"]}" stroke="{theme_cfg["CYAN"]}" stroke-width="2">')
+    a(f'    <animate attributeName="stroke" values="{theme_cfg["CYAN"]};{theme_cfg["EMERALD"]};{theme_cfg["CYAN"]}" dur="3s" repeatCount="indefinite"/>')
+    a(f'  </path>')
+    
+    # Lock / Core Symbol inside Shield
+    a(f'  <rect x="-7" y="-2" width="14" height="12" rx="2" fill="{theme_cfg["CYAN"]}"/>')
+    a(f'  <path d="M -5,-2 A 5 5 0 0 1 5,-2" fill="none" stroke="{theme_cfg["CYAN"]}" stroke-width="2"/>')
+    a(f'  <circle cx="0" cy="4" r="2" fill="{theme_cfg["PANEL"]}"/>')
+
+    # Scanning Laser Bar passing through core
+    a(f'  <line x1="-55" y1="0" x2="55" y2="0" stroke="{theme_cfg["EMERALD"]}" stroke-width="1.5" opacity="0.8">')
+    a(f'    <animateTransform attributeName="transform" type="translate" values="0 -45; 0 45; 0 -45" dur="3s" repeatCount="indefinite"/>')
+    a(f'    <animate attributeName="opacity" values="0.2;0.9;0.2" dur="3s" repeatCount="indefinite"/>')
+    a(f'  </line>')
+
+    # Corner Crosshairs
+    a(f'  <line x1="-66" y1="0" x2="-58" y2="0" stroke="{theme_cfg["CYAN"]}" stroke-width="1.5"/>')
+    a(f'  <line x1="58" y1="0" x2="66" y2="0" stroke="{theme_cfg["CYAN"]}" stroke-width="1.5"/>')
+    a(f'  <line x1="0" y1="-66" x2="0" y2="-58" stroke="{theme_cfg["CYAN"]}" stroke-width="1.5"/>')
+    a(f'  <line x1="0" y1="58" x2="0" y2="66" stroke="{theme_cfg["CYAN"]}" stroke-width="1.5"/>')
+
     a(f'</g>')
 
-    # Skill Polygon calculation
-    poly_pts = []
-    vertex_coords = []
-    for i, (name, val) in enumerate(skills):
-        ang = angles[i]
-        px = cx + r * val * math.cos(ang)
-        py = cy + r * val * math.sin(ang)
-        poly_pts.append(f"{px:.1f},{py:.1f}")
-        vertex_coords.append((px, py, name, val, ang))
+    # Connections from Core to Node Grid
+    a(f'<path d="M 200,220 L 200,235 M 200,235 L 105,250 M 200,235 L 295,250" stroke="{theme_cfg["STROKE"]}" stroke-width="1.2" stroke-dasharray="3,3"/>')
 
-    poly_str = " ".join(poly_pts)
+    # ==================== TECH NODES GRID (2x3 Matrix) ====================
+    # Nodes: Flutter, React, MongoDB, Node.js, Python, Java
+    nodes = [
+        # (name, category, color, icon_type, x, y, delay)
+        ("Flutter", "Cross-Platform", "#02569B", "flutter", 20, 248, "0.2s"),
+        ("React", "Frontend Web", "#61DAFB", "react", 205, 248, "0.35s"),
+        ("MongoDB", "NoSQL Vault", "#13AA52", "mongodb", 20, 324, "0.50s"),
+        ("Node.js", "Backend Core", "#68A063", "nodejs", 205, 324, "0.65s"),
+        ("Python", "Script & AI", "#3776AB", "python", 20, 400, "0.80s"),
+        ("Java & DSA", "Algorithms", "#F89820", "java", 205, 400, "0.95s"),
+    ]
 
-    # Animated Skill Area Polygon
-    a(f'<g>')
-    a(f'  <polygon points="{poly_str}" fill="{theme_cfg["RADAR_FILL"]}" opacity="0">'
-      f'    <animate attributeName="opacity" from="0" to="0.45" dur="1s" begin="0.3s" fill="freeze"/>'
-      f'  </polygon>')
-    a(f'  <polygon points="{poly_str}" fill="none" stroke="{theme_cfg["CYAN"]}" stroke-width="2.5" stroke-linejoin="round" opacity="0">'
-      f'    <animate attributeName="opacity" from="0" to="1" dur="1s" begin="0.3s" fill="freeze"/>'
-      f'  </polygon>')
-    a(f'</g>')
+    for name, cat, col, icon_t, nx, ny, delay in nodes:
+        a(f'<g opacity="0" transform="translate({nx}, {ny})">')
+        a(f'  <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="{delay}" fill="freeze"/>')
+        
+        # Node Box Shell
+        a(f'  <rect width="175" height="64" rx="8" fill="{theme_cfg["NODE_BG"]}" stroke="{theme_cfg["NODE_STROKE"]}">'
+          f'    <animate attributeName="stroke" values="{theme_cfg["NODE_STROKE"]};{theme_cfg["STROKE_HI"]};{theme_cfg["NODE_STROKE"]}" dur="3.5s" begin="{delay}" repeatCount="indefinite"/>'
+          f'  </rect>')
 
-    # Vertex Nodes & Labels
-    for i, (px, py, name, val, ang) in enumerate(vertex_coords):
-        b_time = 0.4 + i * 0.1
-        # Pulsing vertex node
-        a(f'<g opacity="0">')
-        a(f'  <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="{b_time:.2f}s" fill="freeze"/>')
-        a(f'  <circle cx="{px:.1f}" cy="{py:.1f}" r="5" fill="{theme_cfg["CYAN"]}">'
-          f'    <animate attributeName="r" values="4;8;4" dur="2.4s" begin="{b_time:.2f}s" repeatCount="indefinite"/>'
-          f'    <animate attributeName="opacity" values="0.9;0.2;0.9" dur="2.4s" begin="{b_time:.2f}s" repeatCount="indefinite"/>'
+        # Icon Container (Left side of node box, center x=26, y=32)
+        a(f'  <g transform="translate(26, 32)">')
+        
+        if icon_t == "flutter":
+            # Official Flutter Logo Vector
+            a(f'    <path d="M 6,-14 L 14,-14 L 0,0 L 14,14 L 6,14 L -8,0 Z" fill="#54C5F8"/>')
+            a(f'    <path d="M 0,0 L 6,-6 L 14,-6 L 8,0 Z" fill="#01579B"/>')
+            a(f'    <path d="M 0,0 L 6,6 L 14,6 L 8,0 Z" fill="#02569B"/>')
+
+        elif icon_t == "react":
+            # React Logo with Rotating Atomic Orbits
+            a(f'    <circle cx="0" cy="0" r="3.5" fill="#61DAFB"/>')
+            a(f'    <g>')
+            a(f'      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="9s" repeatCount="indefinite"/>')
+            a(f'      <ellipse cx="0" cy="0" rx="15" ry="5.5" fill="none" stroke="#61DAFB" stroke-width="1.4"/>')
+            a(f'      <ellipse cx="0" cy="0" rx="15" ry="5.5" fill="none" stroke="#61DAFB" stroke-width="1.4" transform="rotate(60)"/>')
+            a(f'      <ellipse cx="0" cy="0" rx="15" ry="5.5" fill="none" stroke="#61DAFB" stroke-width="1.4" transform="rotate(120)"/>')
+            a(f'    </g>')
+
+        elif icon_t == "mongodb":
+            # MongoDB Leaf Vector
+            a(f'    <path d="M 0,-15 C 6,-6 10,2 0,16 C -10,2 -6,-6 0,-15 Z" fill="#13AA52"/>')
+            a(f'    <path d="M 0,-15 C 2,-6 5,2 0,16 Z" fill="#3F2A1D" opacity="0.3"/>')
+            a(f'    <line x1="0" y1="-14" x2="0" y2="15" stroke="#FFFFFF" stroke-width="0.9" opacity="0.8"/>')
+
+        elif icon_t == "nodejs":
+            # Node.js Hexagon Vector
+            a(f'    <polygon points="0,-14 12,-7 12,7 0,14 -12,7 -12,-7" fill="#68A063"/>')
+            a(f'    <path d="M -4,-4 L -4,4 L 0,6 L 4,4 L 4,-4 Z" fill="{theme_cfg["PANEL"]}"/>')
+            a(f'    <circle cx="0" cy="0" r="2.5" fill="#68A063"/>')
+
+        elif icon_t == "python":
+            # Python Dual Snake Vector
+            a(f'    <path d="M -2,-14 C -8,-14 -12,-10 -12,-5 C -12,0 -8,0 -8,0 L 0,0 L 0,-4 L -6,-4 C -6,-4 -8,-4 -8,-6 C -8,-8 -6,-10 -2,-10 L 4,-10 L 4,-14 Z" fill="#3776AB"/>')
+            a(f'    <path d="M 2,14 C 8,14 12,10 12,5 C 12,0 8,0 8,0 L 0,0 L 0,4 L 6,4 C 6,4 8,4 8,6 C 8,8 6,10 2,10 L -4,10 L -4,14 Z" fill="#FFD43B"/>')
+            a(f'    <circle cx="-4" cy="-10" r="1.2" fill="#FFFFFF"/>')
+            a(f'    <circle cx="4" cy="10" r="1.2" fill="#FFFFFF"/>')
+
+        elif icon_t == "java":
+            # Java Cup & Flame Vector
+            a(f'    <path d="M -8,2 L 6,2 L 4,11 C 4,13 -4,13 -6,11 Z" fill="none" stroke="#F89820" stroke-width="1.6"/>')
+            a(f'    <path d="M 6,4 C 9,4 9,8 6,8" fill="none" stroke="#F89820" stroke-width="1.4"/>')
+            a(f'    <path d="M -4,-3 C -2,-6 -6,-9 -3,-12" fill="none" stroke="#5382A1" stroke-width="1.4"/>')
+            a(f'    <path d="M 1,-3 C 3,-6 -1,-9 2,-12" fill="none" stroke="#E24E42" stroke-width="1.4"/>')
+
+        a(f'  </g>')
+
+        # Node Labels & Status Indicator
+        a(f'  <text x="48" y="27" font-size="12" font-weight="800" fill="{theme_cfg["TEXT"]}">{esc(name)}</text>')
+        a(f'  <text x="48" y="44" font-size="9.5" font-weight="600" fill="{col}">{esc(cat)}</text>')
+        
+        # Cyber Active Pulse Dot at top right of node box
+        a(f'  <circle cx="160" cy="16" r="3" fill="{theme_cfg["CYAN"]}">'
+          f'    <animate attributeName="opacity" values="1;0.2;1" dur="2s" begin="{delay}" repeatCount="indefinite"/>'
           f'  </circle>')
-        a(f'  <circle cx="{px:.1f}" cy="{py:.1f}" r="3.5" fill="{theme_cfg["TEXT"]}" stroke="{theme_cfg["CYAN"]}" stroke-width="1.8"/>')
-        a(f'</g>')
 
-        # Label Positioning
-        lx = cx + (r + 26) * math.cos(ang)
-        ly = cy + (r + 20) * math.sin(ang)
-        align = "middle"
-        if math.cos(ang) > 0.3:
-            align = "start"
-            lx += 4
-        elif math.cos(ang) < -0.3:
-            align = "end"
-            lx -= 4
-
-        pct_str = f"{int(val * 100)}%"
-        a(f'<g opacity="0">')
-        a(f'  <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="{b_time + 0.2:.2f}s" fill="freeze"/>')
-        a(f'  <text x="{lx:.1f}" y="{ly:.1f}" text-anchor="{align}" font-size="10" font-weight="700" fill="{theme_cfg["TEXT"]}">{esc(name)}</text>')
-        a(f'  <text x="{lx:.1f}" y="{ly + 13:.1f}" text-anchor="{align}" font-size="9.5" font-weight="600" fill="{theme_cfg["CYAN"]}">{pct_str}</text>')
         a(f'</g>')
 
     return "".join(out)
@@ -173,8 +212,6 @@ def generate_radar(cx, cy, r, theme_cfg):
 def generate_svg(theme_name):
     t = THEMES[theme_name]
     gid = f"accent_b_{theme_name}"
-    radar_gid = f"radarGrad_{theme_name}"
-    sweep_gid = f"sweepGrad_{theme_name}"
     
     s = []
     a = s.append
@@ -189,20 +226,6 @@ def generate_svg(theme_name):
     a(f'    <stop offset="1" stop-color="{t["EMERALD"]}"><animate attributeName="stop-color" values="{t["EMERALD"]};{t["VIOLET2"]};{t["CYAN"]};{t["EMERALD"]}" dur="10s" repeatCount="indefinite"/></stop>')
     a(f'  </linearGradient>')
     
-    a(f'  <linearGradient id="radarGradDark" x1="0" y1="0" x2="1" y2="1">')
-    a(f'    <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.6"/>')
-    a(f'    <stop offset="100%" stop-color="#7C3AED" stop-opacity="0.2"/>')
-    a(f'  </linearGradient>')
-
-    a(f'  <linearGradient id="radarGradLight" x1="0" y1="0" x2="1" y2="1">')
-    a(f'    <stop offset="0%" stop-color="#0891B2" stop-opacity="0.5"/>')
-    a(f'    <stop offset="100%" stop-color="#6D28D9" stop-opacity="0.25"/>')
-    a(f'  </linearGradient>')
-
-    a(f'  <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">')
-    a(f'    <feGaussianBlur stdDeviation="4" result="blur"/>')
-    a(f'    <feComposite in="SourceGraphic" in2="blur" operator="over"/>')
-    a(f'  </filter>')
     a(f'  <clipPath id="winClip"><rect x="2" y="2" width="{W-4}" height="{H-4}" rx="18"/></clipPath>')
     a('</defs>')
 
@@ -221,14 +244,14 @@ def generate_svg(theme_name):
     a(f'<circle cx="30" cy="25" r="5.5" fill="#ff5f56"/>')
     a(f'<circle cx="50" cy="25" r="5.5" fill="#ffbd2e"/>')
     a(f'<circle cx="70" cy="25" r="5.5" fill="#27c93f"/>')
-    a(f'<text x="{W/2}" y="29" text-anchor="middle" font-size="12" fill="{t["MUTED"]}">ashwinindira05@gmail.com — % ./profile.sh --live</text>')
+    a(f'<text x="{W/2}" y="29" text-anchor="middle" font-size="12" fill="{t["MUTED"]}">ashwinindira05@gmail.com — % ./profile.sh --cyber-live</text>')
 
-    # ==================== LEFT PANEL (Skill Radar) ====================
+    # ==================== LEFT PANEL (Cyber Security & Tech Vault) ====================
     a(f'<g transform="translate(36, 84)">')
     a(f'  <rect width="400" height="492" rx="12" fill="{t["PANEL"]}" stroke="{t["STROKE"]}">'
       f'    <animate attributeName="stroke" values="{t["STROKE"]};{t["STROKE_HI"]};{t["STROKE"]}" dur="4s" repeatCount="indefinite"/>'
       f'  </rect>')
-    a(generate_radar(200, 260, 130, t))
+    a(generate_cyber_panel(t))
     a(f'</g>')
 
     # ==================== RIGHT PANEL (Terminal Info) ====================
@@ -253,8 +276,8 @@ def generate_svg(theme_name):
         ("ROLE", "B.Tech IT Student / Flutter & Frontend Developer", t["VIOLET"], "0.50s"),
         ("BASE", "Trichy, Tamil Nadu, IN 🇮🇳", t["TEXT"], "0.65s"),
         ("DEGREE", "B.Tech Information Technology", t["MUTED"], "0.80s"),
-        ("CORE_STACK", "Flutter • Dart • React • Node.js • Java • Python", t["CYAN"], "0.95s"),
-        ("STATUS", "⚡ Open for Internships & Open-Source Collaboration", t["EMERALD"], "1.10s"),
+        ("CORE_STACK", "Flutter • React • MongoDB • Node.js • Python • Java", t["CYAN"], "0.95s"),
+        ("STATUS", "⚡ Open for Internships & Cyber/Dev Collaboration", t["EMERALD"], "1.10s"),
         ("CONTACT", "ashwinindira05@gmail.com", t["VIOLET"], "1.25s"),
     ]
 
@@ -273,7 +296,7 @@ def generate_svg(theme_name):
     a(f'  <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.4s" fill="freeze"/>')
     a(f'    <text x="24" y="348" font-size="10" letter-spacing="1.5" font-weight="700" fill="{t["DIM"]}">HIGHLIGHTED TECH</text>')
     
-    tags = ["Flutter", "Dart", "React", "Node.js", "Express", "Java", "Python", "MongoDB", "Git"]
+    tags = ["Flutter", "React", "MongoDB", "Node.js", "Express", "Python", "Java", "Git"]
     tx = 24
     ty = 360
     for tag in tags:
