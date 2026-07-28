@@ -1,0 +1,29 @@
+name: Generate Hero Banner
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "generate_banner.py"
+      - ".github/scripts/generate_banner.py"
+  workflow_dispatch:
+
+jobs:
+  generate:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate dark.svg and light.svg
+        run: |
+          python3 generate_banner.py .
+
+      - name: Commit & Push Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update animated hero banner SVGs [skip ci]"
+          file_pattern: "dark.svg light.svg"

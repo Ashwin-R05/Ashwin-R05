@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Task_Flow",
+    "repo": "Ashwin-R05/Task_Flow",
+    "logo": "logo.png",
+    "description": "Full-stack multi-tenant task management system with secure data isolation, JWT auth & RBAC.",
+    "tags": ["NodeJS", "Express", "MongoDB", "JWT"]
+  },
+  {
+    "name": "summarizit",
+    "repo": "Ashwin-R05/summarizit",
+    "logo": "onetele.png",
+    "description": "AI-powered text & document summarization app built with Flutter & Dart.",
+    "tags": ["Flutter", "Dart", "AI", "Mobile"]
+  },
+  {
+    "name": "Language Learning",
+    "repo": "Ashwin-R05/CodeAlpha_LanguageLearning",
+    "logo": "cl.png",
+    "description": "Interactive language learning application featuring flashcards, vocabulary quizzes, and progress tracking.",
+    "tags": ["Flutter", "Dart", "Mobile"]
+  },
+  {
+    "name": "LeetCode Journey",
+    "repo": "Ashwin-R05/LeetCode",
+    "logo": "claster.png",
+    "description": "LeetCode DSA solutions in Java - tracking problem solving consistency and algorithmic efficiency.",
+    "tags": ["Java", "DSA", "Algorithms"]
+  },
+  {
+    "name": "Life OS",
+    "repo": "Ashwin-R05/Life_OS",
+    "logo": "op.png",
+    "description": "Personal productivity and life dashboard app managing daily tasks, habits, and goals.",
+    "tags": ["Flutter", "Dart", "State Mgmt"]
+  },
+  {
+    "name": "Quotes Generator",
+    "repo": "Ashwin-R05/CodeAlpha_QuotesGenerator",
+    "logo": "chess.png",
+    "description": "Random quotes generator application built with C++.",
+    "tags": ["C++", "OOP", "App"]
+  }
+]
