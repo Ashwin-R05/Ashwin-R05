@@ -21,12 +21,12 @@ jobs:
           github_user_name: Ashwin-R05
           outputs: |
             dist/snake-light.svg?color_snake=%230891B2&color_dots=#ebedf0,#a5b4fc,#818cf8,#6366f1,#0891B2
-            dist/snake-dark.svg?color_snake=%23C084FC&color_dots=#2d3343,#4b5563,#7C3AED,#A78BFA,#22D3EE
+            dist/snake-dark.svg?color_snake=%2310B981&color_dots=#0F172A,#1E293B,#047857,#10B981,#22D3EE
       - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
           build_dir: dist
-          commit_message: "Update snake animation [skip ci]"
+          commit_message: "Update matrix cyber snake animation [skip ci]"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

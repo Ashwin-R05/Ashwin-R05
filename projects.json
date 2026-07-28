@@ -4,35 +4,35 @@
     "repo": "Ashwin-R05/Task_Flow",
     "logo": "logo.png",
     "description": "Full-stack multi-tenant task management system with secure data isolation, JWT auth & RBAC.",
-    "tags": ["NodeJS", "Express", "MongoDB", "JWT"]
+    "tags": ["Security", "NodeJS", "Express", "MongoDB", "JWT"]
   },
   {
     "name": "summarizit",
     "repo": "Ashwin-R05/summarizit",
     "logo": "onetele.png",
-    "description": "AI-powered text & document summarization app built with Flutter & Dart.",
-    "tags": ["Flutter", "Dart", "AI", "Mobile"]
+    "description": "AI-powered document summarizer with secure local storage built with Flutter & Dart.",
+    "tags": ["Flutter", "Dart", "AI", "AppSec"]
   },
   {
-    "name": "Language Learning",
-    "repo": "Ashwin-R05/CodeAlpha_LanguageLearning",
-    "logo": "cl.png",
-    "description": "Interactive language learning application featuring flashcards, vocabulary quizzes, and progress tracking.",
-    "tags": ["Flutter", "Dart", "Mobile"]
+    "name": "IoT Lift India",
+    "repo": "Ashwin-R05/IoT-LIFT-INDIA",
+    "logo": "claster.png",
+    "description": "Smart IoT micro-controller hardware programming session using Arduino IDE & C++.",
+    "tags": ["IoT", "C++", "Embedded", "Security"]
   },
   {
     "name": "LeetCode Journey",
     "repo": "Ashwin-R05/LeetCode",
-    "logo": "claster.png",
-    "description": "LeetCode DSA solutions in Java - tracking problem solving consistency and algorithmic efficiency.",
+    "logo": "cl.png",
+    "description": "LeetCode DSA & Cryptographic Problem Solving in Java - tracking efficiency & consistency.",
     "tags": ["Java", "DSA", "Algorithms"]
   },
   {
-    "name": "Life OS",
-    "repo": "Ashwin-R05/Life_OS",
-    "logo": "op.png",
-    "description": "Personal productivity and life dashboard app managing daily tasks, habits, and goals.",
-    "tags": ["Flutter", "Dart", "State Mgmt"]
+    "name": "Language Learning",
+    "repo": "Ashwin-R05/CodeAlpha_LanguageLearning",
+    "logo": "chessy.png",
+    "description": "Interactive language learning app with encrypted local progress tracking.",
+    "tags": ["Flutter", "Dart", "Mobile"]
   },
   {
     "name": "Quotes Generator",

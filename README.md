@@ -1,10 +1,10 @@
-<!-- ===== THEME-AWARE HERO BANNER ===== -->
+<!-- ===== THEME-AWARE CYBER COMMAND HERO BANNER ===== -->
 <!-- GitHub automatically displays dark.svg in dark mode and light.svg in light mode -->
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Ashwin-R05/Ashwin-R05/main/dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Ashwin-R05/Ashwin-R05/main/light.svg">
-  <img alt="Ashwin R — Profile Banner" src="https://raw.githubusercontent.com/Ashwin-R05/Ashwin-R05/main/light.svg">
+  <img alt="Ashwin R — Cybersecurity &amp; Developer Banner" src="https://raw.githubusercontent.com/Ashwin-R05/Ashwin-R05/main/light.svg">
 </picture>
 
 <!-- ===== GITHUB STATS & TOP LANGUAGES ===== -->
@@ -25,7 +25,7 @@
 
 </div>
 
-<!-- ===== CONTRIBUTION SNAKE ===== -->
+<!-- ===== MATRIX CONTRIBUTION SNAKE ===== -->
 
 <div align="center">
 
@@ -51,10 +51,18 @@
 
 </div>
 
-<!-- ===== SOCIAL BADGES ===== -->
+<!-- ===== CYBER & SOCIAL BADGES ===== -->
 <br/>
 <div align="center">
 
+<a href="https://tryhackme.com/p/Ashwin-R05">
+  <img src="https://img.shields.io/badge/TryHackMe-212C42?style=for-the-badge&logo=tryhackme&logoColor=22D3EE" alt="TryHackMe" />
+</a>
+&nbsp;&nbsp;
+<a href="https://owasp.org">
+  <img src="https://img.shields.io/badge/OWASP-000000?style=for-the-badge&logo=owasp&logoColor=10B981" alt="OWASP" />
+</a>
+&nbsp;&nbsp;
 <a href="https://www.linkedin.com/in/ashwin-r05/">
   <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
 </a>

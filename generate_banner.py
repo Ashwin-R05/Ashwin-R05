@@ -2,13 +2,14 @@
 """
 Generate theme-aware animated profile hero banners (dark.svg & light.svg) for Ashwin R.
 
+Identity: Cybersecurity Enthusiast & Full-Stack Developer Profile.
 Features:
-- Cybersecurity / Sci-Fi HUD aesthetic with navy/cyan/emerald/violet matrix glow.
-- Left Panel: Cyber Security System Matrix + Interactive Tech Nodes (Flutter, React, MongoDB, Node.js, Python, Java).
-- Features rotating Cyber HUD rings, scanning laser reticle, encryption status (AES-256, Firewall Active),
-  and authentic vector logos for Flutter, React (with rotating atomic orbits), MongoDB leaf, Node.js, Python, Java.
-- Right Panel: Typewriter terminal info block (whoami, role, location, degree, stack, status, contact),
-  highlighted tech pill badges, and metrics footer bar.
+- Cyber Command Center HUD aesthetic with navy/cyan/emerald/violet matrix glow.
+- Left Panel: Cyber Security System Matrix & Tech Nodes (Flutter AppSec, React WebSec, MongoDB DB Vault, Node.js JWT/RBAC, Python Sec Scripts, Java Crypt DSA).
+- Features rotating Cyber HUD rings, scanning laser reticle, encryption status (AES-256, Firewall Active, OWASP Audited),
+  and vector logos for Flutter, React (with rotating atomic orbits), MongoDB leaf, Node.js, Python, Java.
+- Right Panel: Typewriter terminal info block (whoami, role, location, fields, core_stack, status, contact),
+  highlighted tech & security badges, and dynamic security metrics footer bar.
 """
 import os, sys, html
 
@@ -33,7 +34,7 @@ THEMES = {
         "PILL_STROKE": "rgba(167,139,250,0.45)",
         "NODE_BG": "#0E172A",
         "NODE_STROKE": "rgba(34,211,238,0.25)",
-        "SHIELD_FILL": "rgba(16,185,129,0.12)",
+        "SHIELD_FILL": "rgba(16,185,129,0.15)",
     },
     "light": {
         "BG": "#F1F5F9",
@@ -55,7 +56,7 @@ THEMES = {
         "PILL_STROKE": "rgba(124,58,237,0.35)",
         "NODE_BG": "#F1F5F9",
         "NODE_STROKE": "rgba(8,145,178,0.30)",
-        "SHIELD_FILL": "rgba(5,150,105,0.12)",
+        "SHIELD_FILL": "rgba(5,150,105,0.15)",
     }
 }
 
@@ -68,13 +69,13 @@ def esc(s):
 
 def generate_cyber_panel(theme_cfg):
     """
-    Generate the Left Panel: Cyber Security Vault + Tech Stack Nodes (Flutter, React, MongoDB, Node.js, Python, Java).
+    Generate Left Panel: Cyber Security Command HUD + Interactive Security Tech Nodes.
     """
     out = []
     a = out.append
 
     # Panel Header Inside Left Box
-    a(f'<text x="200" y="32" text-anchor="middle" font-size="11" letter-spacing="2.5" font-weight="700" fill="{theme_cfg["CYAN"]}">CYBER.VAULT // TECH MATRIX</text>')
+    a(f'<text x="200" y="32" text-anchor="middle" font-size="11" letter-spacing="2.5" font-weight="700" fill="{theme_cfg["CYAN"]}">CYBER.OPS // THREAT &amp; TECH MATRIX</text>')
 
     # Cyber HUD Top Security Status Bar
     a(f'<g transform="translate(20, 44)">')
@@ -82,13 +83,12 @@ def generate_cyber_panel(theme_cfg):
     a(f'  <circle cx="15" cy="13" r="4" fill="{theme_cfg["EMERALD"]}">'
       f'    <animate attributeName="opacity" values="1;0.3;1" dur="1.6s" repeatCount="indefinite"/>'
       f'  </circle>')
-    a(f'  <text x="26" y="17" font-size="9.5" font-weight="700" fill="{theme_cfg["EMERALD"]}">SECURE NODE <tspan fill="{theme_cfg["MUTED"]}">| AES-256 | FIREWALL: ACTIVE</tspan></text>')
+    a(f'  <text x="26" y="17" font-size="9.5" font-weight="700" fill="{theme_cfg["EMERALD"]}">SECURE NODE <tspan fill="{theme_cfg["MUTED"]}">| AES-256 | OWASP: AUDITED</tspan></text>')
     a(f'</g>')
 
     # Central Cyber Security HUD Core (Center: cx=200, cy=155)
     cx, cy = 200, 155
 
-    # Concentric Cyber Target & Radar Rings
     a(f'<g transform="translate({cx},{cy})">')
     
     # Outer Rotating HUD Segmented Ring
@@ -106,7 +106,7 @@ def generate_cyber_panel(theme_cfg):
     a(f'    <animate attributeName="stroke" values="{theme_cfg["CYAN"]};{theme_cfg["EMERALD"]};{theme_cfg["CYAN"]}" dur="3s" repeatCount="indefinite"/>')
     a(f'  </path>')
     
-    # Lock / Core Symbol inside Shield
+    # Lock Symbol inside Shield
     a(f'  <rect x="-7" y="-2" width="14" height="12" rx="2" fill="{theme_cfg["CYAN"]}"/>')
     a(f'  <path d="M -5,-2 A 5 5 0 0 1 5,-2" fill="none" stroke="{theme_cfg["CYAN"]}" stroke-width="2"/>')
     a(f'  <circle cx="0" cy="4" r="2" fill="{theme_cfg["PANEL"]}"/>')
@@ -128,15 +128,13 @@ def generate_cyber_panel(theme_cfg):
     # Connections from Core to Node Grid
     a(f'<path d="M 200,220 L 200,235 M 200,235 L 105,250 M 200,235 L 295,250" stroke="{theme_cfg["STROKE"]}" stroke-width="1.2" stroke-dasharray="3,3"/>')
 
-    # ==================== TECH NODES GRID (2x3 Matrix) ====================
-    # Nodes: Flutter, React, MongoDB, Node.js, Python, Java
+    # ==================== TECH & SECURITY NODES GRID (2x3 Matrix) ====================
     nodes = [
-        # (name, category, color, icon_type, x, y, delay)
-        ("Flutter", "Cross-Platform", "#02569B", "flutter", 20, 248, "0.2s"),
-        ("React", "Frontend Web", "#61DAFB", "react", 205, 248, "0.35s"),
+        ("Flutter", "App Security", "#02569B", "flutter", 20, 248, "0.2s"),
+        ("React", "Web Security", "#61DAFB", "react", 205, 248, "0.35s"),
         ("MongoDB", "NoSQL Vault", "#13AA52", "mongodb", 20, 324, "0.50s"),
-        ("Node.js", "Backend Core", "#68A063", "nodejs", 205, 324, "0.65s"),
-        ("Python", "Script & AI", "#3776AB", "python", 20, 400, "0.80s"),
+        ("Node.js", "JWT &amp; Auth", "#68A063", "nodejs", 205, 324, "0.65s"),
+        ("Python", "Sec Scripts", "#3776AB", "python", 20, 400, "0.80s"),
         ("Java & DSA", "Algorithms", "#F89820", "java", 205, 400, "0.95s"),
     ]
 
@@ -149,17 +147,15 @@ def generate_cyber_panel(theme_cfg):
           f'    <animate attributeName="stroke" values="{theme_cfg["NODE_STROKE"]};{theme_cfg["STROKE_HI"]};{theme_cfg["NODE_STROKE"]}" dur="3.5s" begin="{delay}" repeatCount="indefinite"/>'
           f'  </rect>')
 
-        # Icon Container (Left side of node box, center x=26, y=32)
+        # Icon Container (Left side of node box)
         a(f'  <g transform="translate(26, 32)">')
         
         if icon_t == "flutter":
-            # Official Flutter Logo Vector
             a(f'    <path d="M 6,-14 L 14,-14 L 0,0 L 14,14 L 6,14 L -8,0 Z" fill="#54C5F8"/>')
             a(f'    <path d="M 0,0 L 6,-6 L 14,-6 L 8,0 Z" fill="#01579B"/>')
             a(f'    <path d="M 0,0 L 6,6 L 14,6 L 8,0 Z" fill="#02569B"/>')
 
         elif icon_t == "react":
-            # React Logo with Rotating Atomic Orbits
             a(f'    <circle cx="0" cy="0" r="3.5" fill="#61DAFB"/>')
             a(f'    <g>')
             a(f'      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="9s" repeatCount="indefinite"/>')
@@ -169,26 +165,22 @@ def generate_cyber_panel(theme_cfg):
             a(f'    </g>')
 
         elif icon_t == "mongodb":
-            # MongoDB Leaf Vector
             a(f'    <path d="M 0,-15 C 6,-6 10,2 0,16 C -10,2 -6,-6 0,-15 Z" fill="#13AA52"/>')
             a(f'    <path d="M 0,-15 C 2,-6 5,2 0,16 Z" fill="#3F2A1D" opacity="0.3"/>')
             a(f'    <line x1="0" y1="-14" x2="0" y2="15" stroke="#FFFFFF" stroke-width="0.9" opacity="0.8"/>')
 
         elif icon_t == "nodejs":
-            # Node.js Hexagon Vector
             a(f'    <polygon points="0,-14 12,-7 12,7 0,14 -12,7 -12,-7" fill="#68A063"/>')
             a(f'    <path d="M -4,-4 L -4,4 L 0,6 L 4,4 L 4,-4 Z" fill="{theme_cfg["PANEL"]}"/>')
             a(f'    <circle cx="0" cy="0" r="2.5" fill="#68A063"/>')
 
         elif icon_t == "python":
-            # Python Dual Snake Vector
             a(f'    <path d="M -2,-14 C -8,-14 -12,-10 -12,-5 C -12,0 -8,0 -8,0 L 0,0 L 0,-4 L -6,-4 C -6,-4 -8,-4 -8,-6 C -8,-8 -6,-10 -2,-10 L 4,-10 L 4,-14 Z" fill="#3776AB"/>')
             a(f'    <path d="M 2,14 C 8,14 12,10 12,5 C 12,0 8,0 8,0 L 0,0 L 0,4 L 6,4 C 6,4 8,4 8,6 C 8,8 6,10 2,10 L -4,10 L -4,14 Z" fill="#FFD43B"/>')
             a(f'    <circle cx="-4" cy="-10" r="1.2" fill="#FFFFFF"/>')
             a(f'    <circle cx="4" cy="10" r="1.2" fill="#FFFFFF"/>')
 
         elif icon_t == "java":
-            # Java Cup & Flame Vector
             a(f'    <path d="M -8,2 L 6,2 L 4,11 C 4,13 -4,13 -6,11 Z" fill="none" stroke="#F89820" stroke-width="1.6"/>')
             a(f'    <path d="M 6,4 C 9,4 9,8 6,8" fill="none" stroke="#F89820" stroke-width="1.4"/>')
             a(f'    <path d="M -4,-3 C -2,-6 -6,-9 -3,-12" fill="none" stroke="#5382A1" stroke-width="1.4"/>')
@@ -197,10 +189,10 @@ def generate_cyber_panel(theme_cfg):
         a(f'  </g>')
 
         # Node Labels & Status Indicator
-        a(f'  <text x="48" y="27" font-size="12" font-weight="800" fill="{theme_cfg["TEXT"]}">{esc(name)}</text>')
-        a(f'  <text x="48" y="44" font-size="9.5" font-weight="600" fill="{col}">{esc(cat)}</text>')
+        a(f'  <text x="48" y="27" font-size="12" font-weight="800" fill="{theme_cfg["TEXT"]}">{name}</text>')
+        a(f'  <text x="48" y="44" font-size="9.5" font-weight="600" fill="{col}">{cat}</text>')
         
-        # Cyber Active Pulse Dot at top right of node box
+        # Cyber Active Pulse Dot
         a(f'  <circle cx="160" cy="16" r="3" fill="{theme_cfg["CYAN"]}">'
           f'    <animate attributeName="opacity" values="1;0.2;1" dur="2s" begin="{delay}" repeatCount="indefinite"/>'
           f'  </circle>')
@@ -216,7 +208,7 @@ def generate_svg(theme_name):
     s = []
     a = s.append
 
-    a(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="{FONT}" role="img" aria-label="Ashwin R Profile Banner">')
+    a(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="{FONT}" role="img" aria-label="Ashwin R Cybersecurity Profile Banner">')
     
     # Definitions & Gradients
     a('<defs>')
@@ -244,7 +236,7 @@ def generate_svg(theme_name):
     a(f'<circle cx="30" cy="25" r="5.5" fill="#ff5f56"/>')
     a(f'<circle cx="50" cy="25" r="5.5" fill="#ffbd2e"/>')
     a(f'<circle cx="70" cy="25" r="5.5" fill="#27c93f"/>')
-    a(f'<text x="{W/2}" y="29" text-anchor="middle" font-size="12" fill="{t["MUTED"]}">ashwinindira05@gmail.com — % ./profile.sh --cyber-live</text>')
+    a(f'<text x="{W/2}" y="29" text-anchor="middle" font-size="12" fill="{t["MUTED"]}">ashwinindira05@gmail.com — % ./cyber-profile.sh --live</text>')
 
     # ==================== LEFT PANEL (Cyber Security & Tech Vault) ====================
     a(f'<g transform="translate(36, 84)">')
@@ -254,30 +246,30 @@ def generate_svg(theme_name):
     a(generate_cyber_panel(t))
     a(f'</g>')
 
-    # ==================== RIGHT PANEL (Terminal Info) ====================
+    # ==================== RIGHT PANEL (Cyber & Dev Terminal Info) ====================
     a(f'<g transform="translate(460, 84)">')
     a(f'  <rect width="684" height="492" rx="12" fill="{t["PANEL"]}" stroke="{t["STROKE"]}">'
       f'    <animate attributeName="stroke" values="{t["STROKE"]};{t["STROKE_HI"]};{t["STROKE"]}" dur="4s" begin="1s" repeatCount="indefinite"/>'
       f'  </rect>')
     
     # Right Header
-    a(f'  <text x="24" y="32" font-size="11" letter-spacing="2.5" font-weight="700" fill="{t["CYAN"]}">SYSTEM.INFO // DEVELOPER PROFILE</text>')
-    a(f'  <text x="560" y="32" font-size="10" fill="{t["DIM"]}">./ashwin.sh --live</text>')
+    a(f'  <text x="24" y="32" font-size="11" letter-spacing="2.5" font-weight="700" fill="{t["CYAN"]}">SYSTEM.INFO // CYBER &amp; DEV PROFILE</text>')
+    a(f'  <text x="560" y="32" font-size="10" fill="{t["DIM"]}">./ashwin.sh --sec</text>')
     a(f'  <line x1="24" y1="42" x2="660" y2="42" stroke="url(#{gid})" stroke-width="1.5" opacity="0.7"/>')
 
     # Typewriter Command Line 1: whoami
     a(f'  <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="0.2s" fill="freeze"/>')
-    a(f'    <text x="24" y="74" font-size="13" fill="{t["EMERALD"]}">ashwin@dev-box:~$ <tspan fill="{t["CYAN"]}">whoami</tspan></text>')
+    a(f'    <text x="24" y="74" font-size="13" fill="{t["EMERALD"]}">ashwin@sec-box:~$ <tspan fill="{t["CYAN"]}">whoami --verbose</tspan></text>')
     a(f'  </g>')
 
-    # Bio Fields Table
+    # Bio Fields Table (Cybersecurity + Developer focus)
     info_items = [
         ("NAME", "Ashwin R", t["TEXT"], "0.35s"),
-        ("ROLE", "B.Tech IT Student / Flutter & Frontend Developer", t["VIOLET"], "0.50s"),
+        ("ROLE", "B.Tech IT Student | Cybersecurity & Dev Enthusiast", t["VIOLET"], "0.50s"),
         ("BASE", "Trichy, Tamil Nadu, IN 🇮🇳", t["TEXT"], "0.65s"),
-        ("DEGREE", "B.Tech Information Technology", t["MUTED"], "0.80s"),
-        ("CORE_STACK", "Flutter • React • MongoDB • Node.js • Python • Java", t["CYAN"], "0.95s"),
-        ("STATUS", "⚡ Open for Internships & Cyber/Dev Collaboration", t["EMERALD"], "1.10s"),
+        ("FOCUS", "Web/App Sec (OWASP Top 10) • Network Def • Full-Stack", t["CYAN"], "0.80s"),
+        ("CORE_STACK", "Flutter • React • MongoDB • Node.js • Python • Java", t["EMERALD"], "0.95s"),
+        ("STATUS", "⚡ Seeking Cybersecurity Internships & Dev Collaboration", t["EMERALD"], "1.10s"),
         ("CONTACT", "ashwinindira05@gmail.com", t["VIOLET"], "1.25s"),
     ]
 
@@ -292,11 +284,11 @@ def generate_svg(theme_name):
     # Blinking Terminal Cursor after contact line
     a(f'  <text x="365" y="{start_y + 6 * 32}" font-size="13" font-weight="bold" fill="{t["CYAN"]}">_<animate attributeName="opacity" values="1;0;1" dur="0.9s" repeatCount="indefinite"/></text>')
 
-    # Tech Stack Pill Badges Row
+    # Tech & Security Skill Badges Row
     a(f'  <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.4s" fill="freeze"/>')
-    a(f'    <text x="24" y="348" font-size="10" letter-spacing="1.5" font-weight="700" fill="{t["DIM"]}">HIGHLIGHTED TECH</text>')
+    a(f'    <text x="24" y="348" font-size="10" letter-spacing="1.5" font-weight="700" fill="{t["DIM"]}">CYBER &amp; DEV CAPABILITIES</text>')
     
-    tags = ["Flutter", "React", "MongoDB", "Node.js", "Express", "Python", "Java", "Git"]
+    tags = ["Flutter", "React", "AppSec", "Node.js", "OWASP", "Python", "Java", "MongoDB", "NetworkDef"]
     tx = 24
     ty = 360
     for tag in tags:
@@ -319,13 +311,13 @@ def generate_svg(theme_name):
     a(f'    <line x1="210" y1="430" x2="210" y2="462" stroke="{t["BARLINE"]}"/>')
     
     # Metric 2
-    a(f'    <text x="230" y="441" font-size="9" font-weight="700" fill="{t["DIM"]}">PRIMARY FOCUS</text>')
-    a(f'    <text x="230" y="460" font-size="14" font-weight="800" fill="{t["VIOLET"]}">Flutter &amp; Web</text>')
+    a(f'    <text x="230" y="441" font-size="9" font-weight="700" fill="{t["DIM"]}">SPECIALTY</text>')
+    a(f'    <text x="230" y="460" font-size="14" font-weight="800" fill="{t["VIOLET"]}">Cyber &amp; Dev</text>')
     a(f'    <line x1="430" y1="430" x2="430" y2="462" stroke="{t["BARLINE"]}"/>')
     
     # Metric 3
-    a(f'    <text x="450" y="441" font-size="9" font-weight="700" fill="{t["DIM"]}">SYSTEM STATUS</text>')
-    a(f'    <text x="450" y="460" font-size="13" font-weight="800" fill="{t["EMERALD"]}">● ONLINE <tspan font-size="10" font-weight="normal" fill="{t["MUTED"]}">v2.5</tspan></text>')
+    a(f'    <text x="450" y="441" font-size="9" font-weight="700" fill="{t["DIM"]}">SECURITY STATUS</text>')
+    a(f'    <text x="450" y="460" font-size="13" font-weight="800" fill="{t["EMERALD"]}">● AUDITED <tspan font-size="10" font-weight="normal" fill="{t["MUTED"]}">v2.5</tspan></text>')
     a(f'  </g>')
 
     a(f'</g>')
