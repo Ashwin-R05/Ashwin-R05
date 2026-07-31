@@ -55,7 +55,7 @@
 <br/>
 <div align="center">
 
-<a href="https://tryhackme.com/p/Ashwin-R05">
+<a href="https://tryhackme.com/p/AshwinR07">
   <img src="https://img.shields.io/badge/TryHackMe-212C42?style=for-the-badge&logo=tryhackme&logoColor=22D3EE" alt="TryHackMe" />
 </a>
 &nbsp;&nbsp;
