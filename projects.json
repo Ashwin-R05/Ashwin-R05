@@ -7,6 +7,13 @@
     "tags": ["Security", "NodeJS", "Express", "MongoDB", "JWT"]
   },
   {
+    "name": "Auth2.0",
+    "repo": "Ashwin-R05/Auth2.0",
+    "logo": "",
+    "description": "Production-grade OAuth 2.0 authentication service with PKCE, JWT tokens and granular RBAC.",
+    "tags": ["OAuth2", "Security", "JWT", "Auth", "NodeJS"]
+  },
+  {
     "name": "summarizit",
     "repo": "Ashwin-R05/summarizit",
     "logo": "onetele.png",
@@ -14,31 +21,24 @@
     "tags": ["Flutter", "Dart", "AI", "AppSec"]
   },
   {
-    "name": "IoT Lift India",
-    "repo": "Ashwin-R05/IoT-LIFT-INDIA",
-    "logo": "claster.png",
-    "description": "Smart IoT micro-controller hardware programming session using Arduino IDE & C++.",
-    "tags": ["IoT", "C++", "Embedded", "Security"]
+    "name": "Skillgraph---NLP",
+    "repo": "Ashwin-R05/Skillgraph---NLP",
+    "logo": "",
+    "description": "NLP knowledge graph mapping technical skills, semantic dependencies and learning pathways.",
+    "tags": ["NLP", "Python", "Graph", "MachineLearning", "AI"]
   },
   {
-    "name": "LeetCode Journey",
-    "repo": "Ashwin-R05/LeetCode",
-    "logo": "cl.png",
-    "description": "LeetCode DSA & Cryptographic Problem Solving in Java - tracking efficiency & consistency.",
-    "tags": ["Java", "DSA", "Algorithms"]
+    "name": "Cloud_Guard",
+    "repo": "Ashwin-R05/Cloud_Guard",
+    "logo": "",
+    "description": "Automated cloud security posture management, misconfiguration audit and compliance tool.",
+    "tags": ["CloudSec", "DevSecOps", "Compliance", "Security", "Python"]
   },
   {
-    "name": "Language Learning",
-    "repo": "Ashwin-R05/CodeAlpha_LanguageLearning",
-    "logo": "chessy.png",
-    "description": "Interactive language learning app with encrypted local progress tracking.",
-    "tags": ["Flutter", "Dart", "Mobile"]
-  },
-  {
-    "name": "Quotes Generator",
-    "repo": "Ashwin-R05/CodeAlpha_QuotesGenerator",
-    "logo": "chess.png",
-    "description": "Random quotes generator application built with C++.",
-    "tags": ["C++", "OOP", "App"]
+    "name": "cloud-security-journey",
+    "repo": "Ashwin-R05/cloud-security-journey",
+    "logo": "",
+    "description": "Hands-on cloud security roadmap, defensive architecture patterns and threat modeling labs.",
+    "tags": ["CloudSec", "AWS", "Defense", "Architecture", "CyberSec"]
   }
 ]
