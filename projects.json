@@ -9,7 +9,7 @@
   {
     "name": "Auth2.0",
     "repo": "Ashwin-R05/Auth2.0",
-    "logo": "",
+    "logo": "auth2.png",
     "description": "Production-grade OAuth 2.0 authentication service with PKCE, JWT tokens and granular RBAC.",
     "tags": ["OAuth2", "Security", "JWT", "Auth", "NodeJS"]
   },
@@ -23,21 +23,21 @@
   {
     "name": "Skillgraph---NLP",
     "repo": "Ashwin-R05/Skillgraph---NLP",
-    "logo": "",
+    "logo": "skillgraph.png",
     "description": "NLP knowledge graph mapping technical skills, semantic dependencies and learning pathways.",
     "tags": ["NLP", "Python", "Graph", "MachineLearning", "AI"]
   },
   {
     "name": "Cloud_Guard",
     "repo": "Ashwin-R05/Cloud_Guard",
-    "logo": "",
+    "logo": "cloudguard.png",
     "description": "Automated cloud security posture management, misconfiguration audit and compliance tool.",
     "tags": ["CloudSec", "DevSecOps", "Compliance", "Security", "Python"]
   },
   {
     "name": "cloud-security-journey",
     "repo": "Ashwin-R05/cloud-security-journey",
-    "logo": "",
+    "logo": "cloudjourney.png",
     "description": "Hands-on cloud security roadmap, defensive architecture patterns and threat modeling labs.",
     "tags": ["CloudSec", "AWS", "Defense", "Architecture", "CyberSec"]
   }

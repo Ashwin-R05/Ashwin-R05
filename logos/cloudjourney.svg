@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E1035"/>
+      <stop offset="100%" stop-color="#0F0A1E"/>
+    </linearGradient>
+    <linearGradient id="journeyGrad" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#EC4899"/>
+      <stop offset="50%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Squircle Base -->
+  <rect x="24" y="24" width="464" height="464" rx="115" fill="url(#bgGrad)" stroke="#8B5CF6" stroke-width="12" stroke-opacity="0.6"/>
+
+  <!-- Journey Orbit Rings -->
+  <ellipse cx="256" cy="270" rx="170" ry="70" fill="none" stroke="#8B5CF6" stroke-width="6" stroke-dasharray="12,8" opacity="0.5" transform="rotate(-20 256 270)"/>
+  <ellipse cx="256" cy="270" rx="170" ry="70" fill="none" stroke="#38BDF8" stroke-width="6" stroke-dasharray="10,10" opacity="0.6" transform="rotate(35 256 270)"/>
+
+  <!-- Cloud Outline Top -->
+  <path d="M 180,210 C 180,165 215,130 260,130 C 295,130 325,152 335,185 C 365,185 390,210 390,240 C 390,270 365,295 335,295 L 180,295 C 145,295 120,270 120,240 C 120,212 142,190 170,188 Z" 
+        fill="#2E1065" stroke="#A78BFA" stroke-width="8" opacity="0.7"/>
+
+  <!-- Ascending Journey Path / Compass Arrow -->
+  <path d="M 140,400 Q 210,340 256,260 Q 290,200 256,150" fill="none" stroke="url(#journeyGrad)" stroke-width="14" stroke-linecap="round" filter="url(#glow)"/>
+
+  <!-- Journey Waypoint Nodes (Stepping Stones) -->
+  <circle cx="140" cy="400" r="16" fill="#EC4899" stroke="#FDF2F8" stroke-width="5"/>
+  <circle cx="218" cy="315" r="16" fill="#A855F7" stroke="#FAF5FF" stroke-width="5"/>
+  <circle cx="256" cy="260" r="18" fill="#38BDF8" stroke="#F0F9FF" stroke-width="5" filter="url(#glow)"/>
+
+  <!-- Crown Destination Shield / Compass Star -->
+  <polygon points="256,120 268,145 295,148 274,167 280,194 256,180 232,194 238,167 217,148 244,145" fill="#FBBF24" stroke="#FEF3C7" stroke-width="3" filter="url(#glow)"/>
+</svg>

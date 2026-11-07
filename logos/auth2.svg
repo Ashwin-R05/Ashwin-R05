@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E1B4B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="cyanViolet" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22D3EE"/>
+      <stop offset="100%" stop-color="#818CF8"/>
+    </linearGradient>
+    <linearGradient id="shieldGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#312E81"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Squircle Base -->
+  <rect x="24" y="24" width="464" height="464" rx="115" fill="url(#bgGrad)" stroke="#6366F1" stroke-width="12" stroke-opacity="0.6"/>
+
+  <!-- Inner Cyber Hexagon / Shield -->
+  <path d="M 256,90 L 390,165 L 390,320 L 256,415 L 122,320 L 122,165 Z" fill="url(#shieldGrad)" stroke="url(#cyanViolet)" stroke-width="10" filter="url(#glow)"/>
+
+  <!-- Interlocking OAuth Security Key Rings -->
+  <circle cx="210" cy="235" r="55" fill="none" stroke="#22D3EE" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="302" cy="235" r="55" fill="none" stroke="#A78BFA" stroke-width="16" stroke-linecap="round"/>
+
+  <!-- Key Bit & Lock Center -->
+  <path d="M 256,190 L 256,280 M 235,280 L 277,280 M 245,310 L 267,310" stroke="#F8FAFC" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="256" cy="185" r="16" fill="#22D3EE"/>
+
+  <!-- Accent Nodes -->
+  <circle cx="155" cy="185" r="10" fill="#10B981"/>
+  <circle cx="357" cy="185" r="10" fill="#10B981"/>
+  <circle cx="256" cy="375" r="10" fill="#22D3EE"/>
+</svg>
