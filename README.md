@@ -44,9 +44,9 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Ashwin-R05/Ashwin-R05/projects/projects.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Ashwin-R05/Ashwin-R05/projects/projects-light.svg" />
-  <img width="100%" src="https://raw.githubusercontent.com/Ashwin-R05/Ashwin-R05/projects/projects.svg" alt="Projects" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Ashwin-R05/Ashwin-R05/projects/projects.svg?v=2" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Ashwin-R05/Ashwin-R05/projects/projects-light.svg?v=2" />
+  <img width="100%" src="https://raw.githubusercontent.com/Ashwin-R05/Ashwin-R05/projects/projects.svg?v=2" alt="Projects" />
 </picture>
 
 </div>

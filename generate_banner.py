@@ -1,12 +1,7 @@
 #!/usr/bin/env python3
 """
-Generate theme-aware animated profile hero banners (dark.svg & light.svg) for Ashwin R.
-
-Identity: Cybersecurity Enthusiast & Full-Stack Developer Profile.
-Features:
-- Cyber Command Center HUD aesthetic with navy/cyan/emerald/violet matrix glow.
-- Left Panel: Cyber Security System Matrix & Tech Nodes (Flutter AppSec, React WebSec, MongoDB DB Vault, Node.js JWT/RBAC, Python Sec Scripts, Java Crypt DSA).
-- XML Valid: All text nodes escaped with html.escape for 100% SVG/XML compliance.
+Option 2: Live SOC Telemetry & Defense Stream Profile Hero Banner (dark.svg & light.svg).
+Cybersecurity Command Center HUD + Real-time Streaming Security Logs & Telemetry.
 """
 import os, sys, html
 
@@ -32,6 +27,8 @@ THEMES = {
         "NODE_BG": "#0E172A",
         "NODE_STROKE": "rgba(34,211,238,0.25)",
         "SHIELD_FILL": "rgba(16,185,129,0.15)",
+        "CONSOLE_BG": "#050914",
+        "CONSOLE_STROKE": "rgba(34,211,238,0.20)",
     },
     "light": {
         "BG": "#F1F5F9",
@@ -54,6 +51,8 @@ THEMES = {
         "NODE_BG": "#F1F5F9",
         "NODE_STROKE": "rgba(8,145,178,0.30)",
         "SHIELD_FILL": "rgba(5,150,105,0.15)",
+        "CONSOLE_BG": "#F8FAFC",
+        "CONSOLE_STROKE": "rgba(8,145,178,0.25)",
     }
 }
 
@@ -66,135 +65,138 @@ def esc(s):
 
 def generate_cyber_panel(theme_cfg):
     """
-    Generate Left Panel: Cyber Security Command HUD + Interactive Security Tech Nodes.
+    Generate Left Panel: Cyber Security Command HUD + Live SOC Telemetry Stream Terminal.
     """
     out = []
     a = out.append
 
     # Panel Header Inside Left Box
-    a(f'<text x="200" y="32" text-anchor="middle" font-size="11" letter-spacing="2.5" font-weight="700" fill="{theme_cfg["CYAN"]}">CYBER.OPS // THREAT &amp; TECH MATRIX</text>')
+    a(f'<text x="200" y="32" text-anchor="middle" font-size="11" letter-spacing="2.5" font-weight="700" fill="{theme_cfg["CYAN"]}">SOC.COMMAND // TELEMETRY STREAM</text>')
 
-    # Cyber HUD Top Security Status Bar
+    # Top Status Bar
     a(f'<g transform="translate(20, 44)">')
     a(f'  <rect width="360" height="26" rx="6" fill="{theme_cfg["NODE_BG"]}" stroke="{theme_cfg["NODE_STROKE"]}"/>')
     a(f'  <circle cx="15" cy="13" r="4" fill="{theme_cfg["EMERALD"]}">'
-      f'    <animate attributeName="opacity" values="1;0.3;1" dur="1.6s" repeatCount="indefinite"/>'
+      f'    <animate attributeName="opacity" values="1;0.25;1" dur="1.4s" repeatCount="indefinite"/>'
       f'  </circle>')
-    a(f'  <text x="26" y="17" font-size="9.5" font-weight="700" fill="{theme_cfg["EMERALD"]}">SECURE NODE <tspan fill="{theme_cfg["MUTED"]}">| AES-256 | OWASP: AUDITED</tspan></text>')
+    a(f'  <text x="26" y="17" font-size="9" font-weight="700" fill="{theme_cfg["EMERALD"]}">DAEMON ACTIVE <tspan fill="{theme_cfg["MUTED"]}">| PING: 0.4ms | ZERO-TRUST: ENFORCED</tspan></text>')
     a(f'</g>')
 
-    # Central Cyber Security HUD Core (Center: cx=200, cy=155)
-    cx, cy = 200, 155
+    # Central Cyber Security HUD Core (Center: cx=200, cy=148)
+    cx, cy = 200, 148
 
     a(f'<g transform="translate({cx},{cy})">')
     
     # Outer Rotating HUD Segmented Ring
-    a(f'  <circle cx="0" cy="0" r="62" fill="none" stroke="{theme_cfg["CYAN"]}" stroke-width="1.2" stroke-dasharray="8,5,15,5" opacity="0.65">')
+    a(f'  <circle cx="0" cy="0" r="58" fill="none" stroke="{theme_cfg["CYAN"]}" stroke-width="1.2" stroke-dasharray="8,5,15,5" opacity="0.65">')
     a(f'    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="12s" repeatCount="indefinite"/>')
     a(f'  </circle>')
 
     # Counter-Rotating Inner Tech Ring
-    a(f'  <circle cx="0" cy="0" r="48" fill="none" stroke="{theme_cfg["VIOLET"]}" stroke-width="1" stroke-dasharray="4,4" opacity="0.6">')
+    a(f'  <circle cx="0" cy="0" r="44" fill="none" stroke="{theme_cfg["VIOLET"]}" stroke-width="1" stroke-dasharray="4,4" opacity="0.6">')
     a(f'    <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="8s" repeatCount="indefinite"/>')
     a(f'  </circle>')
 
     # Pulsing Center Cyber Shield
-    a(f'  <path d="M 0,-28 L 22,-14 L 22,12 L 0,28 L -22,12 L -22,-14 Z" fill="{theme_cfg["SHIELD_FILL"]}" stroke="{theme_cfg["CYAN"]}" stroke-width="2">')
+    a(f'  <path d="M 0,-25 L 20,-12 L 20,10 L 0,25 L -20,10 L -20,-12 Z" fill="{theme_cfg["SHIELD_FILL"]}" stroke="{theme_cfg["CYAN"]}" stroke-width="2">')
     a(f'    <animate attributeName="stroke" values="{theme_cfg["CYAN"]};{theme_cfg["EMERALD"]};{theme_cfg["CYAN"]}" dur="3s" repeatCount="indefinite"/>')
     a(f'  </path>')
     
     # Lock Symbol inside Shield
-    a(f'  <rect x="-7" y="-2" width="14" height="12" rx="2" fill="{theme_cfg["CYAN"]}"/>')
-    a(f'  <path d="M -5,-2 A 5 5 0 0 1 5,-2" fill="none" stroke="{theme_cfg["CYAN"]}" stroke-width="2"/>')
-    a(f'  <circle cx="0" cy="4" r="2" fill="{theme_cfg["PANEL"]}"/>')
+    a(f'  <rect x="-6" y="-2" width="12" height="11" rx="2" fill="{theme_cfg["CYAN"]}"/>')
+    a(f'  <path d="M -4,-2 A 4 4 0 0 1 4,-2" fill="none" stroke="{theme_cfg["CYAN"]}" stroke-width="2"/>')
+    a(f'  <circle cx="0" cy="3.5" r="1.8" fill="{theme_cfg["PANEL"]}"/>')
 
     # Scanning Laser Bar passing through core
-    a(f'  <line x1="-55" y1="0" x2="55" y2="0" stroke="{theme_cfg["EMERALD"]}" stroke-width="1.5" opacity="0.8">')
-    a(f'    <animateTransform attributeName="transform" type="translate" values="0 -45; 0 45; 0 -45" dur="3s" repeatCount="indefinite"/>')
+    a(f'  <line x1="-50" y1="0" x2="50" y2="0" stroke="{theme_cfg["EMERALD"]}" stroke-width="1.5" opacity="0.8">')
+    a(f'    <animateTransform attributeName="transform" type="translate" values="0 -40; 0 40; 0 -40" dur="3s" repeatCount="indefinite"/>')
     a(f'    <animate attributeName="opacity" values="0.2;0.9;0.2" dur="3s" repeatCount="indefinite"/>')
     a(f'  </line>')
 
     # Corner Crosshairs
-    a(f'  <line x1="-66" y1="0" x2="-58" y2="0" stroke="{theme_cfg["CYAN"]}" stroke-width="1.5"/>')
-    a(f'  <line x1="58" y1="0" x2="66" y2="0" stroke="{theme_cfg["CYAN"]}" stroke-width="1.5"/>')
-    a(f'  <line x1="0" y1="-66" x2="0" y2="-58" stroke="{theme_cfg["CYAN"]}" stroke-width="1.5"/>')
-    a(f'  <line x1="0" y1="58" x2="0" y2="66" stroke="{theme_cfg["CYAN"]}" stroke-width="1.5"/>')
+    a(f'  <line x1="-62" y1="0" x2="-54" y2="0" stroke="{theme_cfg["CYAN"]}" stroke-width="1.5"/>')
+    a(f'  <line x1="54" y1="0" x2="62" y2="0" stroke="{theme_cfg["CYAN"]}" stroke-width="1.5"/>')
+    a(f'  <line x1="0" y1="-62" x2="0" y2="-54" stroke="{theme_cfg["CYAN"]}" stroke-width="1.5"/>')
+    a(f'  <line x1="0" y1="54" x2="0" y2="62" stroke="{theme_cfg["CYAN"]}" stroke-width="1.5"/>')
+
+    # Radar Blips (Pulsing Monitored Nodes)
+    a(f'  <circle cx="32" cy="-24" r="3" fill="{theme_cfg["EMERALD"]}"><animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/></circle>')
+    a(f'  <circle cx="-35" cy="18" r="2.5" fill="{theme_cfg["CYAN"]}"><animate attributeName="opacity" values="0.3;1;0.3" dur="2.4s" repeatCount="indefinite"/></circle>')
+    a(f'  <circle cx="28" cy="28" r="2" fill="{theme_cfg["VIOLET"]}"><animate attributeName="opacity" values="0.2;0.9;0.2" dur="1.8s" repeatCount="indefinite"/></circle>')
 
     a(f'</g>')
 
-    # Connections from Core to Node Grid
-    a(f'<path d="M 200,220 L 200,235 M 200,235 L 105,250 M 200,235 L 295,250" stroke="{theme_cfg["STROKE"]}" stroke-width="1.2" stroke-dasharray="3,3"/>')
+    # Connection line down to Console
+    a(f'<path d="M 200,210 L 200,225" stroke="{theme_cfg["STROKE"]}" stroke-width="1.5" stroke-dasharray="3,3"/>')
 
-    # ==================== TECH & SECURITY NODES GRID (2x3 Matrix) ====================
-    nodes = [
-        ("Flutter", "App Security", "#02569B", "flutter", 20, 248, "0.2s"),
-        ("React", "Web Security", "#61DAFB", "react", 205, 248, "0.35s"),
-        ("MongoDB", "NoSQL Vault", "#13AA52", "mongodb", 20, 324, "0.50s"),
-        ("Node.js", "JWT & Auth", "#68A063", "nodejs", 205, 324, "0.65s"),
-        ("Python", "Sec Scripts", "#3776AB", "python", 20, 400, "0.80s"),
-        ("Java & DSA", "Algorithms", "#F89820", "java", 205, 400, "0.95s"),
+    # ==================== LIVE SOC TELEMETRY CONSOLE BOX ====================
+    # Position: x=20, y=225, width=360, height=245
+    a(f'<g transform="translate(20, 225)">')
+    
+    # Console Shell
+    a(f'  <rect width="360" height="245" rx="10" fill="{theme_cfg["CONSOLE_BG"]}" stroke="{theme_cfg["CONSOLE_STROKE"]}">'
+      f'    <animate attributeName="stroke" values="{theme_cfg["CONSOLE_STROKE"]};{theme_cfg["STROKE_HI"]};{theme_cfg["CONSOLE_STROKE"]}" dur="4s" repeatCount="indefinite"/>'
+      f'  </rect>')
+
+    # Console Header Bar
+    a(f'  <rect width="360" height="26" rx="10" fill="{theme_cfg["NODE_BG"]}"/>')
+    a(f'  <rect y="18" width="360" height="8" fill="{theme_cfg["NODE_BG"]}"/>')
+    a(f'  <line x1="0" y1="26" x2="360" y2="26" stroke="{theme_cfg["BARLINE"]}"/>')
+    
+    # Tiny terminal window controls
+    a(f'  <circle cx="14" cy="13" r="3.5" fill="#EF4444"/>')
+    a(f'  <circle cx="26" cy="13" r="3.5" fill="#F59E0B"/>')
+    a(f'  <circle cx="38" cy="13" r="3.5" fill="#10B981"/>')
+    a(f'  <text x="52" y="16.5" font-size="9" font-weight="700" fill="{theme_cfg["MUTED"]}">soc-stream.sh --live</text>')
+    
+    # LIVE Pill on header right
+    a(f'  <circle cx="304" cy="13" r="3" fill="{theme_cfg["EMERALD"]}">'
+      f'    <animate attributeName="opacity" values="1;0.2;1" dur="1s" repeatCount="indefinite"/>'
+      f'  </circle>')
+    a(f'  <text x="312" y="16.5" font-size="8.5" font-weight="700" fill="{theme_cfg["EMERALD"]}">STREAM</text>')
+
+    # Telemetry Log Entries (Staggered Entrance)
+    logs = [
+        ("01:04:18", "AUTH", "OAuth2 PKCE Handshake", "PASS", theme_cfg["CYAN"], theme_cfg["EMERALD"], "0.2s"),
+        ("01:04:19", "CSPM", "AWS CloudGuard Audit", "0 ERR", theme_cfg["VIOLET"], theme_cfg["EMERALD"], "0.4s"),
+        ("01:04:20", "APSEC", "OWASP Top 10 API Shield", "SECURE", theme_cfg["EMERALD"], theme_cfg["CYAN"], "0.6s"),
+        ("01:04:21", "GRAPH", "SkillGraph NLP Engine", "ACTIVE", theme_cfg["CYAN"], theme_cfg["VIOLET"], "0.8s"),
+        ("01:04:22", "NETWK", "Zero-Trust Perimeter", "LOCKED", theme_cfg["EMERALD"], theme_cfg["EMERALD"], "1.0s"),
     ]
 
-    for name, cat, col, icon_t, nx, ny, delay in nodes:
-        a(f'<g opacity="0" transform="translate({nx}, {ny})">')
-        a(f'  <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="{delay}" fill="freeze"/>')
-        
-        # Node Box Shell
-        a(f'  <rect width="175" height="64" rx="8" fill="{theme_cfg["NODE_BG"]}" stroke="{theme_cfg["NODE_STROKE"]}">'
-          f'    <animate attributeName="stroke" values="{theme_cfg["NODE_STROKE"]};{theme_cfg["STROKE_HI"]};{theme_cfg["NODE_STROKE"]}" dur="3.5s" begin="{delay}" repeatCount="indefinite"/>'
-          f'  </rect>')
-
-        # Icon Container (Left side of node box)
-        a(f'  <g transform="translate(26, 32)">')
-        
-        if icon_t == "flutter":
-            a(f'    <path d="M 6,-14 L 14,-14 L 0,0 L 14,14 L 6,14 L -8,0 Z" fill="#54C5F8"/>')
-            a(f'    <path d="M 0,0 L 6,-6 L 14,-6 L 8,0 Z" fill="#01579B"/>')
-            a(f'    <path d="M 0,0 L 6,6 L 14,6 L 8,0 Z" fill="#02569B"/>')
-
-        elif icon_t == "react":
-            a(f'    <circle cx="0" cy="0" r="3.5" fill="#61DAFB"/>')
-            a(f'    <g>')
-            a(f'      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="9s" repeatCount="indefinite"/>')
-            a(f'      <ellipse cx="0" cy="0" rx="15" ry="5.5" fill="none" stroke="#61DAFB" stroke-width="1.4"/>')
-            a(f'      <ellipse cx="0" cy="0" rx="15" ry="5.5" fill="none" stroke="#61DAFB" stroke-width="1.4" transform="rotate(60)"/>')
-            a(f'      <ellipse cx="0" cy="0" rx="15" ry="5.5" fill="none" stroke="#61DAFB" stroke-width="1.4" transform="rotate(120)"/>')
-            a(f'    </g>')
-
-        elif icon_t == "mongodb":
-            a(f'    <path d="M 0,-15 C 6,-6 10,2 0,16 C -10,2 -6,-6 0,-15 Z" fill="#13AA52"/>')
-            a(f'    <path d="M 0,-15 C 2,-6 5,2 0,16 Z" fill="#3F2A1D" opacity="0.3"/>')
-            a(f'    <line x1="0" y1="-14" x2="0" y2="15" stroke="#FFFFFF" stroke-width="0.9" opacity="0.8"/>')
-
-        elif icon_t == "nodejs":
-            a(f'    <polygon points="0,-14 12,-7 12,7 0,14 -12,7 -12,-7" fill="#68A063"/>')
-            a(f'    <path d="M -4,-4 L -4,4 L 0,6 L 4,4 L 4,-4 Z" fill="{theme_cfg["PANEL"]}"/>')
-            a(f'    <circle cx="0" cy="0" r="2.5" fill="#68A063"/>')
-
-        elif icon_t == "python":
-            a(f'    <path d="M -2,-14 C -8,-14 -12,-10 -12,-5 C -12,0 -8,0 -8,0 L 0,0 L 0,-4 L -6,-4 C -6,-4 -8,-4 -8,-6 C -8,-8 -6,-10 -2,-10 L 4,-10 L 4,-14 Z" fill="#3776AB"/>')
-            a(f'    <path d="M 2,14 C 8,14 12,10 12,5 C 12,0 8,0 8,0 L 0,0 L 0,4 L 6,4 C 6,4 8,4 8,6 C 8,8 6,10 2,10 L -4,10 L -4,14 Z" fill="#FFD43B"/>')
-            a(f'    <circle cx="-4" cy="-10" r="1.2" fill="#FFFFFF"/>')
-            a(f'    <circle cx="4" cy="10" r="1.2" fill="#FFFFFF"/>')
-
-        elif icon_t == "java":
-            a(f'    <path d="M -8,2 L 6,2 L 4,11 C 4,13 -4,13 -6,11 Z" fill="none" stroke="#F89820" stroke-width="1.6"/>')
-            a(f'    <path d="M 6,4 C 9,4 9,8 6,8" fill="none" stroke="#F89820" stroke-width="1.4"/>')
-            a(f'    <path d="M -4,-3 C -2,-6 -6,-9 -3,-12" fill="none" stroke="#5382A1" stroke-width="1.4"/>')
-            a(f'    <path d="M 1,-3 C 3,-6 -1,-9 2,-12" fill="none" stroke="#E24E42" stroke-width="1.4"/>')
-
+    log_y = 50
+    for ts, tag, msg, status, tag_col, stat_col, b_anim in logs:
+        a(f'  <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="{b_anim}" fill="freeze"/>')
+        # Timestamp
+        a(f'    <text x="14" y="{log_y}" font-size="9" fill="{theme_cfg["DIM"]}">{ts}</text>')
+        # Tag Badge
+        a(f'    <rect x="64" y="{log_y-9}" width="38" height="13" rx="3" fill="{theme_cfg["PILL_BG"]}" stroke="{theme_cfg["PILL_STROKE"]}"/>')
+        a(f'    <text x="83" y="{log_y}" text-anchor="middle" font-size="7.5" font-weight="700" fill="{tag_col}">{tag}</text>')
+        # Message
+        a(f'    <text x="110" y="{log_y}" font-size="9" fill="{theme_cfg["TEXT"]}">{esc(msg)}</text>')
+        # Status Pill
+        a(f'    <text x="346" y="{log_y}" text-anchor="end" font-size="8.5" font-weight="800" fill="{stat_col}">[{status}]</text>')
         a(f'  </g>')
+        log_y += 24
 
-        # Node Labels & Status Indicator (Fully Escaped)
-        a(f'  <text x="48" y="27" font-size="12" font-weight="800" fill="{theme_cfg["TEXT"]}">{esc(name)}</text>')
-        a(f'  <text x="48" y="44" font-size="9.5" font-weight="600" fill="{col}">{esc(cat)}</text>')
-        
-        # Cyber Active Pulse Dot
-        a(f'  <circle cx="160" cy="16" r="3" fill="{theme_cfg["CYAN"]}">'
-          f'    <animate attributeName="opacity" values="1;0.2;1" dur="2s" begin="{delay}" repeatCount="indefinite"/>'
-          f'  </circle>')
+    # Terminal Prompt & Blinking Cursor
+    a(f'  <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.2s" fill="freeze"/>')
+    a(f'    <line x1="14" y1="172" x2="346" y2="172" stroke="{theme_cfg["BARLINE"]}"/>')
+    a(f'    <text x="14" y="191" font-size="9.5" fill="{theme_cfg["EMERALD"]}">soc@sec-box:~$ <tspan fill="{theme_cfg["CYAN"]}">threat-hunt --status</tspan>'
+      f'<tspan fill="{theme_cfg["CYAN"]}">_<animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite"/></tspan></text>')
+    a(f'  </g>')
 
-        a(f'</g>')
+    # Bottom Console Metric Ribbon
+    a(f'  <g transform="translate(14, 204)">')
+    a(f'    <rect width="332" height="26" rx="5" fill="{theme_cfg["NODE_BG"]}" stroke="{theme_cfg["BARLINE"]}"/>')
+    a(f'    <text x="12" y="17" font-size="8" font-weight="700" fill="{theme_cfg["DIM"]}">INTRUSIONS: <tspan fill="{theme_cfg["EMERALD"]}">0</tspan></text>')
+    a(f'    <line x1="100" y1="6" x2="100" y2="20" stroke="{theme_cfg["BARLINE"]}"/>')
+    a(f'    <text x="112" y="17" font-size="8" font-weight="700" fill="{theme_cfg["DIM"]}">UPTIME: <tspan fill="{theme_cfg["CYAN"]}">99.98%</tspan></text>')
+    a(f'    <line x1="216" y1="6" x2="216" y2="20" stroke="{theme_cfg["BARLINE"]}"/>')
+    a(f'    <text x="228" y="17" font-size="8" font-weight="700" fill="{theme_cfg["DIM"]}">POLICY: <tspan fill="{theme_cfg["VIOLET"]}">ENFORCED</tspan></text>')
+    a(f'  </g>')
+
+    a(f'</g>')
 
     return "".join(out)
 
@@ -233,9 +235,9 @@ def generate_svg(theme_name):
     a(f'<circle cx="30" cy="25" r="5.5" fill="#ff5f56"/>')
     a(f'<circle cx="50" cy="25" r="5.5" fill="#ffbd2e"/>')
     a(f'<circle cx="70" cy="25" r="5.5" fill="#27c93f"/>')
-    a(f'<text x="{W/2}" y="29" text-anchor="middle" font-size="12" fill="{t["MUTED"]}">ashwinindira05@gmail.com - % ./cyber-profile.sh --live</text>')
+    a(f'<text x="{W/2}" y="29" text-anchor="middle" font-size="12" fill="{t["MUTED"]}">ashwinindira05@gmail.com - % ./soc-command.sh --stream --live</text>')
 
-    # ==================== LEFT PANEL (Cyber Security & Tech Vault) ====================
+    # ==================== LEFT PANEL (Live SOC Telemetry & Command HUD) ====================
     a(f'<g transform="translate(36, 84)">')
     a(f'  <rect width="400" height="492" rx="12" fill="{t["PANEL"]}" stroke="{t["STROKE"]}">'
       f'    <animate attributeName="stroke" values="{t["STROKE"]};{t["STROKE_HI"]};{t["STROKE"]}" dur="4s" repeatCount="indefinite"/>'
@@ -250,7 +252,7 @@ def generate_svg(theme_name):
       f'  </rect>')
     
     # Right Header
-    a(f'  <text x="24" y="32" font-size="11" letter-spacing="2.5" font-weight="700" fill="{t["CYAN"]}">SYSTEM.INFO // CYBER &amp; DEV PROFILE</text>')
+    a(f'  <text x="24" y="32" font-size="11" letter-spacing="2.5" font-weight="700" fill="{t["CYAN"]}">SYSTEM.INFO // CYBERSECURITY &amp; DEV ARCHITECTURE</text>')
     a(f'  <text x="560" y="32" font-size="10" fill="{t["DIM"]}">./ashwin.sh --sec</text>')
     a(f'  <line x1="24" y1="42" x2="660" y2="42" stroke="url(#{gid})" stroke-width="1.5" opacity="0.7"/>')
 
@@ -259,14 +261,14 @@ def generate_svg(theme_name):
     a(f'    <text x="24" y="74" font-size="13" fill="{t["EMERALD"]}">ashwin@sec-box:~$ <tspan fill="{t["CYAN"]}">whoami --verbose</tspan></text>')
     a(f'  </g>')
 
-    # Bio Fields Table (Cybersecurity + Developer focus)
+    # Bio Fields Table (Cybersecurity + Systems focus)
     info_items = [
         ("NAME", "Ashwin R", t["TEXT"], "0.35s"),
-        ("ROLE", "B.Tech IT Student | Cybersecurity & Dev Enthusiast", t["VIOLET"], "0.50s"),
+        ("ROLE", "B.Tech IT Student | Cybersecurity Specialist & Dev", t["VIOLET"], "0.50s"),
         ("BASE", "Trichy, Tamil Nadu, IN 🇮🇳", t["TEXT"], "0.65s"),
-        ("FOCUS", "Web/App Sec (OWASP Top 10) • Network Def • Full-Stack", t["CYAN"], "0.80s"),
-        ("CORE_STACK", "Flutter • React • MongoDB • Node.js • Python • Java", t["EMERALD"], "0.95s"),
-        ("STATUS", "⚡ Seeking Cybersecurity Internships & Dev Collaboration", t["EMERALD"], "1.10s"),
+        ("FOCUS", "CloudSec (CSPM) • AppSec (OWASP Top 10) • OAuth2 • DevSecOps", t["CYAN"], "0.80s"),
+        ("CORE_STACK", "CloudSec • Python • Node.js • Flutter • Docker • Java", t["EMERALD"], "0.95s"),
+        ("STATUS", "⚡ Seeking Cybersecurity Roles & Dev Collaboration", t["EMERALD"], "1.10s"),
         ("CONTACT", "ashwinindira05@gmail.com", t["VIOLET"], "1.25s"),
     ]
 
@@ -283,9 +285,9 @@ def generate_svg(theme_name):
 
     # Tech & Security Skill Badges Row
     a(f'  <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.4s" fill="freeze"/>')
-    a(f'    <text x="24" y="348" font-size="10" letter-spacing="1.5" font-weight="700" fill="{t["DIM"]}">CYBER &amp; DEV CAPABILITIES</text>')
+    a(f'    <text x="24" y="348" font-size="10" letter-spacing="1.5" font-weight="700" fill="{t["DIM"]}">CORE DOMAINS &amp; CAPABILITIES</text>')
     
-    tags = ["Flutter", "React", "AppSec", "Node.js", "OWASP", "Python", "Java", "MongoDB", "NetworkDef"]
+    tags = ["CloudSec", "OAuth2", "OWASP", "AppSec", "DevSecOps", "Python", "Flutter", "Docker", "Node.js"]
     tx = 24
     ty = 360
     for tag in tags:
@@ -314,7 +316,7 @@ def generate_svg(theme_name):
     
     # Metric 3
     a(f'    <text x="450" y="441" font-size="9" font-weight="700" fill="{t["DIM"]}">SECURITY STATUS</text>')
-    a(f'    <text x="450" y="460" font-size="13" font-weight="800" fill="{t["EMERALD"]}">● AUDITED <tspan font-size="10" font-weight="normal" fill="{t["MUTED"]}">v2.5</tspan></text>')
+    a(f'    <text x="450" y="460" font-size="13" font-weight="800" fill="{t["EMERALD"]}">● AUDITED <tspan font-size="10" font-weight="normal" fill="{t["MUTED"]}">v3.0</tspan></text>')
     a(f'  </g>')
 
     a(f'</g>')
